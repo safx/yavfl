@@ -305,14 +305,24 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
 
 // MARK: - operators
 
+prefix operator | {}
+
+public prefix func |(e: VisualFormat) -> VisualFormat {
+    return VisualFormat(composition: .Superview, e)
+}
+
+
+postfix operator | {}
+
+public postfix func |(e: VisualFormat) -> VisualFormat {
+    return VisualFormat(composition: e, .Superview)
+}
+
+
 prefix operator |- {}
 
 public prefix func |-(e: VisualFormat) -> VisualFormat {
     return VisualFormat(composition: .Superview, .Connection, e)
-}
-
-public prefix func |-(e: [ViewExpression]) -> VisualFormat {
-    return VisualFormat(composition: .Superview, .Connection, .View(LayoutView(e)))
 }
 
 
@@ -322,33 +332,12 @@ public postfix func -|(e: VisualFormat) -> VisualFormat {
     return VisualFormat(composition: e, .Connection, .Superview)
 }
 
-public postfix func -|(e: [ViewExpression]) -> VisualFormat {
-    return VisualFormat(composition: .View(LayoutView(e)), .Connection, .Superview)
-}
-
 
 infix operator - {}
 
 public func -(lhs: VisualFormat, rhs: VisualFormat) -> VisualFormat {
     return VisualFormat(composition: lhs, .Connection, rhs)
 }
-
-public func -(lhs: VisualFormat, rhs: Int) -> VisualFormat {
-    return VisualFormat(composition: lhs, .Connection, .Number(rhs))
-}
-
-public func -(lhs: Int, rhs: VisualFormat) -> VisualFormat {
-    return VisualFormat(composition: .Number(lhs), .Connection, rhs)
-}
-
-public func -(lhs: VisualFormat, rhs: [ViewExpression]) -> VisualFormat {
-    return VisualFormat(composition: lhs, .Connection, .View(LayoutView(rhs)))
-}
-
-public func -(lhs: [ViewExpression], rhs: VisualFormat) -> VisualFormat {
-    return VisualFormat(composition: .View(LayoutView(lhs)), .Connection, rhs)
-}
-
 
 
 private func createPredicate(view: ViewExpression, relation: LayoutRelation) -> ViewExpression {
