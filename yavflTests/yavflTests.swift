@@ -24,6 +24,8 @@ class yavflTests: XCTestCase {
         XCTAssertEqual(v(|[x]-|)             , "|[v1]-|")
         XCTAssertEqual(v(|-[x]-|)            , "|-[v1]-|")
         XCTAssertEqual(v(|-10-[x]-20-|)      , "|-10-[v1]-20-|")
+        XCTAssertEqual(v(|-(>=100)-[x]-0-|)  , "|-(>=100)-[v1]-0-|")
+        XCTAssertEqual(v(|-[x]-(>=99)-|)     , "|-[v1]-(>=99)-|")
         XCTAssertEqual(v([x,<=y~1000])       , "[v1(<=v2@1000)]")
         XCTAssertEqual(v(|-0-[x,==200]-[y]-|), "|-0-[v1(==200)]-[v2]-|")
 

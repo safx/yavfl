@@ -227,6 +227,7 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
     case Superview
     case View(LayoutView)
     case Connection
+    case Predicate(LayoutPredicate)
     case Number(Int)
     case Composition([VisualFormat])
 
@@ -236,6 +237,7 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
         case Superview:          return "|"
         case View(let v):        return "[" + v.description + "]"
         case Connection:         return "-"
+        case Predicate(let p):   return "(" + p.description + ")"
         case Number(let n):      return "\(n)"
         case Composition(let c): return "".join(c.map { $0.description })
         }
@@ -303,6 +305,26 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
     }
 }
 
+// MARK: helper funcs
+
+private func createVisualFormatPredicate(view: ViewExpression, priority: Int? = nil) -> VisualFormat {
+    switch view {
+    case .Predicate(let p):
+        return .Predicate(LayoutPredicate(relation: p.relation, object: p.object, priority: priority))
+    default:
+        fatalError("Error")
+    }
+}
+
+private func createViewExpressionPredicate(view: ViewExpression, relation: LayoutRelation) -> ViewExpression {
+    switch view {
+    case .View(let v):
+        return .Predicate(LayoutPredicate(relation: relation, object: .View(v)))
+    default:
+        fatalError("Error")
+    }
+}
+
 // MARK: - operators
 
 prefix operator | {}
@@ -325,11 +347,19 @@ public prefix func |-(e: VisualFormat) -> VisualFormat {
     return VisualFormat(composition: .Superview, .Connection, e)
 }
 
+public prefix func |-(e: (ViewExpression)) -> VisualFormat {
+    return VisualFormat(composition: .Superview, .Connection, createVisualFormatPredicate(e.0))
+}
+
 
 postfix operator -| {}
 
 public postfix func -|(e: VisualFormat) -> VisualFormat {
     return VisualFormat(composition: e, .Connection, .Superview)
+}
+
+public postfix func -|(e: (ViewExpression)) -> VisualFormat {
+    return VisualFormat(composition: createVisualFormatPredicate(e.0), .Connection, .Superview)
 }
 
 
@@ -339,15 +369,10 @@ public func -(lhs: VisualFormat, rhs: VisualFormat) -> VisualFormat {
     return VisualFormat(composition: lhs, .Connection, rhs)
 }
 
-
-private func createPredicate(view: ViewExpression, relation: LayoutRelation) -> ViewExpression {
-    switch view {
-    case .View(let v):
-        return .Predicate(LayoutPredicate(relation: relation, object: .View(v)))
-    default:
-        fatalError("Error")
-    }
+public func -(lhs: VisualFormat, rhs: (ViewExpression)) -> VisualFormat {
+    return VisualFormat(composition: lhs, .Connection, createVisualFormatPredicate(rhs.0))
 }
+
 
 prefix operator == {}
 
@@ -356,7 +381,7 @@ public prefix func ==(n: Int) -> ViewExpression {
 }
 
 public prefix func ==(view: ViewExpression) -> ViewExpression {
-    return createPredicate(view, .Equal)
+    return createViewExpressionPredicate(view, .Equal)
 }
 
 
@@ -367,7 +392,7 @@ public prefix func <=(n: Int) -> ViewExpression {
 }
 
 public prefix func <=(view: ViewExpression) -> ViewExpression {
-    return createPredicate(view, .LessThanOrEqual)
+    return createViewExpressionPredicate(view, .LessThanOrEqual)
 }
 
 
@@ -378,7 +403,7 @@ public prefix func >=(n: Int) -> ViewExpression {
 }
 
 public prefix func >=(view: ViewExpression) -> ViewExpression {
-    return createPredicate(view, .GreaterThanOrEqual)
+    return createViewExpressionPredicate(view, .GreaterThanOrEqual)
 }
 
 
