@@ -230,7 +230,8 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
     case Predicate(LayoutPredicate)
     case Number(Int)
     case Composition([VisualFormat])
-
+    case Options(NSLayoutFormatOptions)
+    
     public var description: String {
         switch self {
         case Orientation(let o): return o.description
@@ -240,7 +241,24 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
         case Predicate(let p):   return "(" + p.description + ")"
         case Number(let n):      return "\(n)"
         case Composition(let c): return "".join(c.map { $0.description })
+        case Options:            return ""
         }
+    }
+    
+    var options: NSLayoutFormatOptions {
+        switch self {
+        case Options(let opts): return opts
+        case Composition(let c):
+            for i in c {
+                switch i {
+                case Options(let opts): return opts
+                default: continue
+                }
+            }
+        default:
+            break;
+        }
+        return NSLayoutFormatOptions()
     }
 
     var relatedViews: [LayoutViewName] {
@@ -407,6 +425,13 @@ public prefix func >=(view: ViewExpression) -> ViewExpression {
 }
 
 
+infix operator % {}
+
+public func %(lhs: VisualFormat, rhs: NSLayoutFormatOptions) -> VisualFormat {
+    return VisualFormat(composition: lhs, .Options(rhs))
+}
+
+
 infix operator ~ {}
 
 public func ~(lhs: ViewExpression, rhs: Int) -> ViewExpression {
@@ -422,8 +447,9 @@ public func ~(lhs: LayoutOrientation, rhs: VisualFormat) -> () {
     if let superView = rhs.superView? {
         let exp = lhs.description + ":" + rhs.description
         let dic = rhs.viewsDictionary
+        let opts = rhs.options
         //println("\(exp)")
-        let c = NSLayoutConstraint.constraintsWithVisualFormat(exp, options: nil, metrics: nil, views: dic)
+        let c = NSLayoutConstraint.constraintsWithVisualFormat(exp, options: opts, metrics: nil, views: dic)
         superView.addConstraints(c)
     }
     return ()

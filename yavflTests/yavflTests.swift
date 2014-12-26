@@ -17,6 +17,10 @@ class yavflTests: XCTestCase {
     func v(vf: VisualFormat) -> String {
         return vf.description
     }
+    
+    func opt(vf: VisualFormat) -> NSLayoutFormatOptions {
+        return vf.options
+    }
 
     func testExample() {
         XCTAssertEqual(v(|[x]|)              , "|[v1]|")
@@ -38,5 +42,9 @@ class yavflTests: XCTestCase {
         XCTAssertEqual(v([x,==y])              , "[v1(==v2)]")
         XCTAssertEqual(v([x,>=70,<=100])       , "[v1(>=70,<=100)]")
         XCTAssertEqual(v(|-[x]-[y]-[z,>=20]-|) , "|-[v1]-[v2]-[v3(>=20)]-|")
+    }
+    func testOptions() {
+        XCTAssertEqual(opt(|[x]|)                   , NSLayoutFormatOptions())
+        XCTAssertEqual(opt(|[x]| % .AlignAllCenterY), NSLayoutFormatOptions.AlignAllCenterY)
     }
 }
