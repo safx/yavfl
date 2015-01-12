@@ -1,5 +1,6 @@
-yavfl
-=====
+#yavfl
+
+[![TravisCI](http://img.shields.io/travis/safx/yavfl.svg?style=flat)](https://travis-ci.org/safx/yavfl)
 
 yavfl is Yet Anoter Visual Format Language for Auto Layout.
 
