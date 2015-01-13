@@ -12,8 +12,8 @@
 		8DF1B0DC1A349BC200295741 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF1B0DA1A349BC200295741 /* Main.storyboard */; };
 		8DF1B0DE1A349BC200295741 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DF1B0DD1A349BC200295741 /* Images.xcassets */; };
 		8DF1B0ED1A349BC200295741 /* yavflTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0EC1A349BC200295741 /* yavflTests.swift */; };
-		8DF1B0F81A349D2500295741 /* yaavl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yaavl.swift */; };
-		8DF1B0F91A349DA100295741 /* yaavl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yaavl.swift */; };
+		8DF1B0F81A349D2500295741 /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
+		8DF1B0F91A349DA100295741 /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,7 @@
 		8DF1B0E61A349BC200295741 /* yavflTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yavflTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF1B0EB1A349BC200295741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DF1B0EC1A349BC200295741 /* yavflTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yavflTests.swift; sourceTree = "<group>"; };
-		8DF1B0F71A349D2500295741 /* yaavl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yaavl.swift; sourceTree = "<group>"; };
+		8DF1B0F71A349D2500295741 /* yavfl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yavfl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 		8DF1B0F61A349D0D00295741 /* yavfl */ = {
 			isa = PBXGroup;
 			children = (
-				8DF1B0F71A349D2500295741 /* yaavl.swift */,
+				8DF1B0F71A349D2500295741 /* yavfl.swift */,
 			);
 			name = yavfl;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DF1B0D91A349BC200295741 /* ViewController.swift in Sources */,
-				8DF1B0F81A349D2500295741 /* yaavl.swift in Sources */,
+				8DF1B0F81A349D2500295741 /* yavfl.swift in Sources */,
 				8DF1B0D71A349BC200295741 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,7 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DF1B0ED1A349BC200295741 /* yavflTests.swift in Sources */,
-				8DF1B0F91A349DA100295741 /* yaavl.swift in Sources */,
+				8DF1B0F91A349DA100295741 /* yavfl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
