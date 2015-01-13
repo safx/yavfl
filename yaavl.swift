@@ -195,7 +195,7 @@ public class LayoutView : Printable {
         return v
     }
 
-    init(_ elements: [ViewExpression]) {
+    public init(_ elements: [ViewExpression]) {
         assert(countElements(elements) > 0)
         switch elements[0] {
         case .View(let v):
@@ -304,6 +304,10 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
     public init(integerLiteral value: IntegerLiteralType) {
         self = .Number(value)
     }
+    
+    public init(arrayLiteral elements: ViewExpression...) {
+        self = .View(LayoutView(elements))
+    }
 
     public init(composition elements: VisualFormat...) {
         var t = [VisualFormat]()
@@ -316,10 +320,6 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
             }
         }
         self = .Composition(t)
-    }
-
-    public init(arrayLiteral elements: ViewExpression...) {
-        self = .View(LayoutView(elements))
     }
 }
 
@@ -381,7 +381,7 @@ public postfix func -|(e: (ViewExpression)) -> VisualFormat {
 }
 
 
-infix operator - {}
+//infix operator - {}
 
 public func -(lhs: VisualFormat, rhs: VisualFormat) -> VisualFormat {
     return VisualFormat(composition: lhs, .Connection, rhs)
