@@ -76,4 +76,6 @@ Some parts of the syntax are changed due to Swift's syntax limitation.
 
 ## Install
 
-Just copy `yavfl.swift` into your project.
+    pod 'yavfl'
+
+Or, just copy `yavfl.swift` into your project.
