@@ -1,6 +1,9 @@
 #yavfl
 
 [![TravisCI](http://img.shields.io/travis/safx/yavfl.svg?style=flat)](https://travis-ci.org/safx/yavfl)
+![Platform](https://img.shields.io/cocoapods/p/yavfl.svg?style=flat)
+![License](https://img.shields.io/cocoapods/l/yavfl.svg?style=flat)
+![Version](https://img.shields.io/cocoapods/v/yavfl.svg?style=flat)
 
 yavfl is Yet Anoter Visual Format Language for Auto Layout.
 
@@ -9,25 +12,29 @@ yavfl is Yet Anoter Visual Format Language for Auto Layout.
 
 In yavfl, you can write the code of visual format language as follows:
 
-    visualFormat(label, textField) { l, t in
-        .V ~ |-40-[l,==32]
-        .V ~ |-40-[t,==32]
-        .H ~ |-20-[l,==t]-10-[t]-|
-    }
+```swift
+visualFormat(label, textField) { l, t in
+    .V ~ |-40-[l,==32]
+    .V ~ |-40-[t,==32]
+    .H ~ |-20-[l,==t]-10-[t]-|
+}
+```
 
 ![](./images/layout_sample.png)
 
 The equivallent code of the original visual format is follows:
 
-    let dic = ["l": label, "t": textField]
-    label.setTranslatesAutoresizingMaskIntoConstraints(false)
-    textField.setTranslatesAutoresizingMaskIntoConstraints(false)
-    let c1 = NSLayoutConstraint.constraintsWithVisualFormat("V:|-40-[l(32)]", options: nil, metrics: nil, views: dic)
-    let c2 = NSLayoutConstraint.constraintsWithVisualFormat("V:|-40-[t(32)]", options: nil, metrics: nil, views: dic)
-    let c3 = NSLayoutConstraint.constraintsWithVisualFormat("|-20-[l(==t)]-10-[t]-|", options: nil, metrics: nil, views: dic)
-    self.view.addConstraints(c1)
-    self.view.addConstraints(c2)
-    self.view.addConstraints(c3)
+```swift
+let dic = ["l": label, "t": textField]
+label.setTranslatesAutoresizingMaskIntoConstraints(false)
+textField.setTranslatesAutoresizingMaskIntoConstraints(false)
+let c1 = NSLayoutConstraint.constraintsWithVisualFormat("V:|-40-[l(32)]", options: nil, metrics: nil, views: dic)
+let c2 = NSLayoutConstraint.constraintsWithVisualFormat("V:|-40-[t(32)]", options: nil, metrics: nil, views: dic)
+let c3 = NSLayoutConstraint.constraintsWithVisualFormat("|-20-[l(==t)]-10-[t]-|", options: nil, metrics: nil, views: dic)
+self.view.addConstraints(c1)
+self.view.addConstraints(c2)
+self.view.addConstraints(c3)
+```
 
 ## More Examples
 
