@@ -425,7 +425,7 @@ public prefix func >=(view: ViewExpression) -> ViewExpression {
 }
 
 
-infix operator % {}
+//infix operator % {}
 
 public func %(lhs: VisualFormat, rhs: NSLayoutFormatOptions) -> VisualFormat {
     return VisualFormat(composition: lhs, .Options(rhs))
