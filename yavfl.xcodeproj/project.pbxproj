@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D556EF71A727791004FA111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D556EF61A727791004FA111 /* AppDelegate.swift */; };
+		8D556EF91A727791004FA111 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D556EF81A727791004FA111 /* ViewController.swift */; };
+		8D556EFB1A727791004FA111 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D556EFA1A727791004FA111 /* Images.xcassets */; };
+		8D556EFE1A727791004FA111 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D556EFC1A727791004FA111 /* Main.storyboard */; };
+		8D556F0A1A727791004FA111 /* yavflSample_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D556F091A727791004FA111 /* yavflSample_OSXTests.swift */; };
+		8D556F111A727855004FA111 /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
+		8D556F121A727855004FA111 /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
 		8DF1B0D71A349BC200295741 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0D61A349BC200295741 /* AppDelegate.swift */; };
 		8DF1B0D91A349BC200295741 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0D81A349BC200295741 /* ViewController.swift */; };
 		8DF1B0DC1A349BC200295741 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF1B0DA1A349BC200295741 /* Main.storyboard */; };
@@ -17,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8D556F041A727791004FA111 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DF1B0C91A349BC200295741 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D556EF11A727791004FA111;
+			remoteInfo = "yavflSample-OSX";
+		};
 		8DF1B0E71A349BC200295741 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8DF1B0C91A349BC200295741 /* Project object */;
@@ -27,19 +41,42 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8DF1B0D11A349BC200295741 /* yavfl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yavfl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D556EF21A727791004FA111 /* yavflSample-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yavflSample-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D556EF51A727791004FA111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D556EF61A727791004FA111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8D556EF81A727791004FA111 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8D556EFA1A727791004FA111 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8D556EFD1A727791004FA111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8D556F031A727791004FA111 /* yavflSample-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "yavflSample-OSXTests.xctest"; path = "yavflSampleTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D556F081A727791004FA111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D556F091A727791004FA111 /* yavflSample_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yavflSample_OSXTests.swift; sourceTree = "<group>"; };
+		8DF1B0D11A349BC200295741 /* yavfl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = yavfl.app; path = "yavflSample-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF1B0D51A349BC200295741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DF1B0D61A349BC200295741 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DF1B0D81A349BC200295741 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8DF1B0DB1A349BC200295741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DF1B0DD1A349BC200295741 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8DF1B0E61A349BC200295741 /* yavflTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yavflTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DF1B0E61A349BC200295741 /* yavflSampleTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "yavflSampleTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF1B0EB1A349BC200295741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DF1B0EC1A349BC200295741 /* yavflTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yavflTests.swift; sourceTree = "<group>"; };
 		8DF1B0F71A349D2500295741 /* yavfl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yavfl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8D556EEF1A727791004FA111 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D556F001A727791004FA111 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DF1B0CE1A349BC200295741 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -57,12 +94,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D556EF31A727791004FA111 /* yavflSample-OSX */ = {
+			isa = PBXGroup;
+			children = (
+				8D556EF61A727791004FA111 /* AppDelegate.swift */,
+				8D556EF81A727791004FA111 /* ViewController.swift */,
+				8D556EFA1A727791004FA111 /* Images.xcassets */,
+				8D556EFC1A727791004FA111 /* Main.storyboard */,
+				8D556EF41A727791004FA111 /* Supporting Files */,
+			);
+			path = "yavflSample-OSX";
+			sourceTree = "<group>";
+		};
+		8D556EF41A727791004FA111 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8D556EF51A727791004FA111 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8D556F061A727791004FA111 /* yavflSample-OSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				8D556F091A727791004FA111 /* yavflSample_OSXTests.swift */,
+				8D556F071A727791004FA111 /* Supporting Files */,
+			);
+			path = "yavflSample-OSXTests";
+			sourceTree = "<group>";
+		};
+		8D556F071A727791004FA111 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8D556F081A727791004FA111 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		8DF1B0C81A349BC200295741 = {
 			isa = PBXGroup;
 			children = (
 				8DF1B0F61A349D0D00295741 /* yavfl */,
-				8DF1B0D31A349BC200295741 /* yavflSample */,
+				8DF1B0D31A349BC200295741 /* yavflSample-iOS */,
 				8DF1B0E91A349BC200295741 /* yavflTests */,
+				8D556EF31A727791004FA111 /* yavflSample-OSX */,
+				8D556F061A727791004FA111 /* yavflSample-OSXTests */,
 				8DF1B0D21A349BC200295741 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,12 +147,14 @@
 			isa = PBXGroup;
 			children = (
 				8DF1B0D11A349BC200295741 /* yavfl.app */,
-				8DF1B0E61A349BC200295741 /* yavflTests.xctest */,
+				8DF1B0E61A349BC200295741 /* yavflSampleTests-iOS.xctest */,
+				8D556EF21A727791004FA111 /* yavflSample-OSX.app */,
+				8D556F031A727791004FA111 /* yavflSample-OSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8DF1B0D31A349BC200295741 /* yavflSample */ = {
+		8DF1B0D31A349BC200295741 /* yavflSample-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				8DF1B0D61A349BC200295741 /* AppDelegate.swift */,
@@ -85,7 +163,7 @@
 				8DF1B0DD1A349BC200295741 /* Images.xcassets */,
 				8DF1B0D41A349BC200295741 /* Supporting Files */,
 			);
-			path = yavflSample;
+			path = "yavflSample-iOS";
 			sourceTree = "<group>";
 		};
 		8DF1B0D41A349BC200295741 /* Supporting Files */ = {
@@ -124,9 +202,44 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8DF1B0D01A349BC200295741 /* yavfl */ = {
+		8D556EF11A727791004FA111 /* yavflSample-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8DF1B0F01A349BC200295741 /* Build configuration list for PBXNativeTarget "yavfl" */;
+			buildConfigurationList = 8D556F0F1A727791004FA111 /* Build configuration list for PBXNativeTarget "yavflSample-OSX" */;
+			buildPhases = (
+				8D556EEE1A727791004FA111 /* Sources */,
+				8D556EEF1A727791004FA111 /* Frameworks */,
+				8D556EF01A727791004FA111 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "yavflSample-OSX";
+			productName = "yavflSample-OSX";
+			productReference = 8D556EF21A727791004FA111 /* yavflSample-OSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8D556F021A727791004FA111 /* yavflSampleTests-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D556F101A727791004FA111 /* Build configuration list for PBXNativeTarget "yavflSampleTests-OSX" */;
+			buildPhases = (
+				8D556EFF1A727791004FA111 /* Sources */,
+				8D556F001A727791004FA111 /* Frameworks */,
+				8D556F011A727791004FA111 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D556F051A727791004FA111 /* PBXTargetDependency */,
+			);
+			name = "yavflSampleTests-OSX";
+			productName = "yavflSample-OSXTests";
+			productReference = 8D556F031A727791004FA111 /* yavflSample-OSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8DF1B0D01A349BC200295741 /* yavflSample-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DF1B0F01A349BC200295741 /* Build configuration list for PBXNativeTarget "yavflSample-iOS" */;
 			buildPhases = (
 				8DF1B0CD1A349BC200295741 /* Sources */,
 				8DF1B0CE1A349BC200295741 /* Frameworks */,
@@ -136,14 +249,14 @@
 			);
 			dependencies = (
 			);
-			name = yavfl;
+			name = "yavflSample-iOS";
 			productName = yavfl;
 			productReference = 8DF1B0D11A349BC200295741 /* yavfl.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8DF1B0E51A349BC200295741 /* yavflTests */ = {
+		8DF1B0E51A349BC200295741 /* yavflSampleTests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8DF1B0F31A349BC200295741 /* Build configuration list for PBXNativeTarget "yavflTests" */;
+			buildConfigurationList = 8DF1B0F31A349BC200295741 /* Build configuration list for PBXNativeTarget "yavflSampleTests-iOS" */;
 			buildPhases = (
 				8DF1B0E21A349BC200295741 /* Sources */,
 				8DF1B0E31A349BC200295741 /* Frameworks */,
@@ -154,9 +267,9 @@
 			dependencies = (
 				8DF1B0E81A349BC200295741 /* PBXTargetDependency */,
 			);
-			name = yavflTests;
+			name = "yavflSampleTests-iOS";
 			productName = yavflTests;
-			productReference = 8DF1B0E61A349BC200295741 /* yavflTests.xctest */;
+			productReference = 8DF1B0E61A349BC200295741 /* yavflSampleTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -168,6 +281,13 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Safx Developers";
 				TargetAttributes = {
+					8D556EF11A727791004FA111 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					8D556F021A727791004FA111 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 8D556EF11A727791004FA111;
+					};
 					8DF1B0D01A349BC200295741 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -190,13 +310,31 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8DF1B0D01A349BC200295741 /* yavfl */,
-				8DF1B0E51A349BC200295741 /* yavflTests */,
+				8DF1B0D01A349BC200295741 /* yavflSample-iOS */,
+				8DF1B0E51A349BC200295741 /* yavflSampleTests-iOS */,
+				8D556EF11A727791004FA111 /* yavflSample-OSX */,
+				8D556F021A727791004FA111 /* yavflSampleTests-OSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8D556EF01A727791004FA111 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D556EFB1A727791004FA111 /* Images.xcassets in Resources */,
+				8D556EFE1A727791004FA111 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D556F011A727791004FA111 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DF1B0CF1A349BC200295741 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,6 +354,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8D556EEE1A727791004FA111 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D556F111A727855004FA111 /* yavfl.swift in Sources */,
+				8D556EF91A727791004FA111 /* ViewController.swift in Sources */,
+				8D556EF71A727791004FA111 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D556EFF1A727791004FA111 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D556F121A727855004FA111 /* yavfl.swift in Sources */,
+				8D556F0A1A727791004FA111 /* yavflSample_OSXTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DF1B0CD1A349BC200295741 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,14 +395,27 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8D556F051A727791004FA111 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D556EF11A727791004FA111 /* yavflSample-OSX */;
+			targetProxy = 8D556F041A727791004FA111 /* PBXContainerItemProxy */;
+		};
 		8DF1B0E81A349BC200295741 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8DF1B0D01A349BC200295741 /* yavfl */;
+			target = 8DF1B0D01A349BC200295741 /* yavflSample-iOS */;
 			targetProxy = 8DF1B0E71A349BC200295741 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8D556EFC1A727791004FA111 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D556EFD1A727791004FA111 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		8DF1B0DA1A349BC200295741 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -257,6 +427,80 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8D556F0B1A727791004FA111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "yavflSample-OSX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8D556F0C1A727791004FA111 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = "yavflSample-OSX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8D556F0D1A727791004FA111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "yavflSample-OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yavflSample-OSX.app/Contents/MacOS/yavflSample-OSX";
+			};
+			name = Debug;
+		};
+		8D556F0E1A727791004FA111 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "yavflSample-OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yavflSample-OSX.app/Contents/MacOS/yavflSample-OSX";
+			};
+			name = Release;
+		};
 		8DF1B0EE1A349BC200295741 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -340,7 +584,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "$(SRCROOT)/yavflSample/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/yavflSample-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -350,7 +595,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "$(SRCROOT)/yavflSample/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/yavflSample-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -371,7 +617,7 @@
 				INFOPLIST_FILE = yavflTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yavfl.app/yavfl";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yavflSample-iOS.app/yavflSample-iOS";
 			};
 			name = Debug;
 		};
@@ -386,13 +632,31 @@
 				INFOPLIST_FILE = yavflTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yavfl.app/yavfl";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yavflSample-iOS.app/yavflSample-iOS";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8D556F0F1A727791004FA111 /* Build configuration list for PBXNativeTarget "yavflSample-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D556F0B1A727791004FA111 /* Debug */,
+				8D556F0C1A727791004FA111 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D556F101A727791004FA111 /* Build configuration list for PBXNativeTarget "yavflSampleTests-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D556F0D1A727791004FA111 /* Debug */,
+				8D556F0E1A727791004FA111 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8DF1B0CC1A349BC200295741 /* Build configuration list for PBXProject "yavfl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -402,7 +666,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8DF1B0F01A349BC200295741 /* Build configuration list for PBXNativeTarget "yavfl" */ = {
+		8DF1B0F01A349BC200295741 /* Build configuration list for PBXNativeTarget "yavflSample-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8DF1B0F11A349BC200295741 /* Debug */,
@@ -411,7 +675,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8DF1B0F31A349BC200295741 /* Build configuration list for PBXNativeTarget "yavflTests" */ = {
+		8DF1B0F31A349BC200295741 /* Build configuration list for PBXNativeTarget "yavflSampleTests-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8DF1B0F41A349BC200295741 /* Debug */,

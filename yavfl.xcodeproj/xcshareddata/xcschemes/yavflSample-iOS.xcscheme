@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8DF1B0D01A349BC200295741"
-               BuildableName = "yavfl.app"
-               BlueprintName = "yavfl"
+               BuildableName = "yavflSample-iOS.app"
+               BlueprintName = "yavflSample-iOS"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8DF1B0E51A349BC200295741"
-               BuildableName = "yavflTests.xctest"
-               BlueprintName = "yavflTests"
+               BuildableName = "yavflSampleTests-iOS.xctest"
+               BlueprintName = "yavflSampleTests-iOS"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8DF1B0E51A349BC200295741"
-               BuildableName = "yavflTests.xctest"
-               BlueprintName = "yavflTests"
+               BuildableName = "yavflSampleTests-iOS.xctest"
+               BlueprintName = "yavflSampleTests-iOS"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8DF1B0D01A349BC200295741"
-            BuildableName = "yavfl.app"
-            BlueprintName = "yavfl"
+            BuildableName = "yavflSample-iOS.app"
+            BlueprintName = "yavflSample-iOS"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -76,8 +76,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8DF1B0D01A349BC200295741"
-            BuildableName = "yavfl.app"
-            BlueprintName = "yavfl"
+            BuildableName = "yavflSample-iOS.app"
+            BlueprintName = "yavflSample-iOS"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -94,8 +94,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8DF1B0D01A349BC200295741"
-            BuildableName = "yavfl.app"
-            BlueprintName = "yavfl"
+            BuildableName = "yavflSample-iOS.app"
+            BlueprintName = "yavflSample-iOS"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

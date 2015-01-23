@@ -7,22 +7,41 @@
 //  Copyright (c) 2014 Safx Developers. All rights reserved.
 //
 
-import UIKit
+
+import Foundation
+
+#if os(iOS)
+    import UIKit
+    public typealias YAVView = UIView
+#else
+    import AppKit
+    public typealias YAVView = NSView
+#endif
+
+extension YAVView {
+    private func yav_setTranslatesAutoresizingMaskIntoConstraints(flag: Bool) {
+        #if os(iOS)
+            setTranslatesAutoresizingMaskIntoConstraints(flag)
+        #else
+            translatesAutoresizingMaskIntoConstraints = flag
+        #endif
+    }
+}
 
 
-public func visualFormat(v1: UIView,
+public func visualFormat(v1: YAVView,
                          block: (ViewExpression) -> ()) {
-    v1.setTranslatesAutoresizingMaskIntoConstraints(false)
+    v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
 
     block(.View(LayoutViewName(v1, 1)))
 
     v1.updateConstraints()
 }
 
-public func visualFormat(v1: UIView, v2: UIView,
+public func visualFormat(v1: YAVView, v2: YAVView,
                          block: (ViewExpression, ViewExpression) -> ()) {
-    v1.setTranslatesAutoresizingMaskIntoConstraints(false)
-    v2.setTranslatesAutoresizingMaskIntoConstraints(false)
+    v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v2.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
 
     block(.View(LayoutViewName(v1, 1)),
           .View(LayoutViewName(v2, 2)))
@@ -31,11 +50,11 @@ public func visualFormat(v1: UIView, v2: UIView,
     v2.updateConstraints()
 }
 
-public func visualFormat(v1: UIView, v2: UIView, v3: UIView,
+public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView,
                          block: (ViewExpression, ViewExpression, ViewExpression) -> ()) {
-    v1.setTranslatesAutoresizingMaskIntoConstraints(false)
-    v2.setTranslatesAutoresizingMaskIntoConstraints(false)
-    v3.setTranslatesAutoresizingMaskIntoConstraints(false)
+    v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v2.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v3.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
 
     block(.View(LayoutViewName(v1, 1)),
           .View(LayoutViewName(v2, 2)),
@@ -46,12 +65,12 @@ public func visualFormat(v1: UIView, v2: UIView, v3: UIView,
     v3.updateConstraints()
 }
 
-public func visualFormat(v1: UIView, v2: UIView, v3: UIView, v4: UIView,
+public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView, v4: YAVView,
                          block: (ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
-    v1.setTranslatesAutoresizingMaskIntoConstraints(false)
-    v2.setTranslatesAutoresizingMaskIntoConstraints(false)
-    v3.setTranslatesAutoresizingMaskIntoConstraints(false)
-    v4.setTranslatesAutoresizingMaskIntoConstraints(false)
+    v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v2.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v3.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v4.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
 
     block(.View(LayoutViewName(v1, 1)),
           .View(LayoutViewName(v2, 2)),
@@ -64,13 +83,13 @@ public func visualFormat(v1: UIView, v2: UIView, v3: UIView, v4: UIView,
     v4.updateConstraints()
 }
 
-public func visualFormat(v1: UIView, v2: UIView, v3: UIView, v4: UIView, v5: UIView,
+public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView, v4: YAVView, v5: YAVView,
                          block: (ViewExpression, ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
-    v1.setTranslatesAutoresizingMaskIntoConstraints(false)
-    v2.setTranslatesAutoresizingMaskIntoConstraints(false)
-    v3.setTranslatesAutoresizingMaskIntoConstraints(false)
-    v4.setTranslatesAutoresizingMaskIntoConstraints(false)
-    v5.setTranslatesAutoresizingMaskIntoConstraints(false)
+    v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v2.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v3.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v4.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v5.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
 
     block(.View(LayoutViewName(v1, 1)),
           .View(LayoutViewName(v2, 2)),
@@ -95,14 +114,14 @@ public enum ViewExpression {
 // MARK: <viewName>
 
 public class LayoutViewName : Printable {
-    let view: UIView
+    let view: YAVView
     let index: Int
 
     public var description: String {
         return "v\(index)"
     }
 
-    init(_ view: UIView, _ index: Int) {
+    init(_ view: YAVView, _ index: Int) {
         self.view = view
         self.index = index
     }
@@ -231,7 +250,7 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
     case Number(Int)
     case Composition([VisualFormat])
     case Options(NSLayoutFormatOptions)
-    
+
     public var description: String {
         switch self {
         case Orientation(let o): return o.description
@@ -244,7 +263,7 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
         case Options:            return ""
         }
     }
-    
+
     var options: NSLayoutFormatOptions {
         switch self {
         case Options(let opts): return opts
@@ -288,8 +307,8 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
         return d
     }
 
-    var superView: UIView? {
-        var s = [UIView]()
+    var superView: YAVView? {
+        var s = [YAVView]()
         for v in relatedViews {
             if let sv = v.view.superview {
                 s.append(sv)
@@ -304,7 +323,7 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
     public init(integerLiteral value: IntegerLiteralType) {
         self = .Number(value)
     }
-    
+
     public init(arrayLiteral elements: ViewExpression...) {
         self = .View(LayoutView(elements))
     }
