@@ -221,7 +221,8 @@
 				8D7AC9BC1A75495900574AAC /* yavflOSXTests.swift */,
 				8D7AC9BA1A75495900574AAC /* Supporting Files */,
 			);
-			path = yavflOSXTests;
+			name = yavflOSXTests;
+			path = Tests/yavflOSXTests;
 			sourceTree = "<group>";
 		};
 		8D7AC9BA1A75495900574AAC /* Supporting Files */ = {
@@ -798,7 +799,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = yavflOSXTests/Info.plist;
+				INFOPLIST_FILE = Tests/yavflOSXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -815,7 +816,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = yavflOSXTests/Info.plist;
+				INFOPLIST_FILE = Tests/yavflOSXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
