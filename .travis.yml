@@ -6,6 +6,6 @@ before_install:
 
 script:
 - set -o pipefail
-- xcodebuild -project yavfl.xcodeproj -scheme yavflSample-iOS test -sdk iphonesimulator | xcpretty -c
-#- xcodebuild -project yavfl.xcodeproj -scheme yavflSample-OSX build | xcpretty -c
+- xcodebuild -project yavfl.xcodeproj -scheme yavfl-iOS test -sdk iphonesimulator | xcpretty -c
+#- xcodebuild -project yavfl.xcodeproj -scheme yavfl-OSX build | xcpretty -c
 - pod lib lint --quick
