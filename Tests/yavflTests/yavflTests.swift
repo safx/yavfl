@@ -2,8 +2,8 @@
 //  yavflTests.swift
 //  yavflTests
 //
-//  Created by Safx Developer on 2014/12/07.
-//  Copyright (c) 2014 Safx Developers. All rights reserved.
+//  Created by Safx Developer on 2015/01/26.
+//  Copyright (c) 2015年 Safx Developers. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ class yavflTests: XCTestCase {
     let x : ViewExpression = .View(LayoutViewName(UIView(), 1))
     let y : ViewExpression = .View(LayoutViewName(UIView(), 2))
     let z : ViewExpression = .View(LayoutViewName(UIView(), 3))
-
+    
     func v(vf: VisualFormat) -> String {
         return vf.description
     }
@@ -21,7 +21,7 @@ class yavflTests: XCTestCase {
     func opt(vf: VisualFormat) -> NSLayoutFormatOptions {
         return vf.options
     }
-
+    
     func testExample() {
         XCTAssertEqual(v(|[x]|)              , "|[v1]|")
         XCTAssertEqual(v(|-[x]|)             , "|-[v1]|")
@@ -32,7 +32,7 @@ class yavflTests: XCTestCase {
         XCTAssertEqual(v(|-[x]-(>=99)-|)     , "|-[v1]-(>=99)-|")
         XCTAssertEqual(v([x,<=y~1000])       , "[v1(<=v2@1000)]")
         XCTAssertEqual(v(|-0-[x,==200]-[y]-|), "|-0-[v1(==200)]-[v2]-|")
-
+        
         XCTAssertEqual(v([x]-[y])              , "[v1]-[v2]")
         XCTAssertEqual(v([x,>=50])             , "[v1(>=50)]")
         XCTAssertEqual(v(|-50-[x]-50-|)        , "|-50-[v1]-50-|")
@@ -43,6 +43,7 @@ class yavflTests: XCTestCase {
         XCTAssertEqual(v([x,>=70,<=100])       , "[v1(>=70,<=100)]")
         XCTAssertEqual(v(|-[x]-[y]-[z,>=20]-|) , "|-[v1]-[v2]-[v3(>=20)]-|")
     }
+    
     func testOptions() {
         XCTAssertEqual(opt(|[x]|)                   , NSLayoutFormatOptions())
         XCTAssertEqual(opt(|[x]| % .AlignAllCenterY), NSLayoutFormatOptions.AlignAllCenterY)

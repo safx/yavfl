@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8DF1B0D01A349BC200295741"
-               BuildableName = "yavflSample-iOS.app"
-               BlueprintName = "yavflSample-iOS"
-               ReferencedContainer = "container:yavfl.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8DF1B0E51A349BC200295741"
-               BuildableName = "yavflSampleTests-iOS.xctest"
-               BlueprintName = "yavflSampleTests-iOS"
+               BlueprintIdentifier = "8D7AC9A81A75495900574AAC"
+               BuildableName = "yavflOSX.framework"
+               BlueprintName = "yavflOSX"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8DF1B0E51A349BC200295741"
-               BuildableName = "yavflSampleTests-iOS.xctest"
-               BlueprintName = "yavflSampleTests-iOS"
+               BlueprintIdentifier = "8D7AC9B21A75495900574AAC"
+               BuildableName = "yavflOSXTests.xctest"
+               BlueprintName = "yavflOSXTests"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8DF1B0D01A349BC200295741"
-            BuildableName = "yavflSample-iOS.app"
-            BlueprintName = "yavflSample-iOS"
+            BlueprintIdentifier = "8D7AC9A81A75495900574AAC"
+            BuildableName = "yavflOSX.framework"
+            BlueprintName = "yavflOSX"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -72,15 +58,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8DF1B0D01A349BC200295741"
-            BuildableName = "yavflSample-iOS.app"
-            BlueprintName = "yavflSample-iOS"
+            BlueprintIdentifier = "8D7AC9A81A75495900574AAC"
+            BuildableName = "yavflOSX.framework"
+            BlueprintName = "yavflOSX"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,15 +76,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8DF1B0D01A349BC200295741"
-            BuildableName = "yavflSample-iOS.app"
-            BlueprintName = "yavflSample-iOS"
+            BlueprintIdentifier = "8D7AC9A81A75495900574AAC"
+            BuildableName = "yavflOSX.framework"
+            BlueprintName = "yavflOSX"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
