@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8D556EF11A727791004FA111"
-               BuildableName = "yavflSample-OSX.app"
-               BlueprintName = "yavflSample-OSX"
+               BlueprintIdentifier = "8D7AC9821A7547BB00574AAC"
+               BuildableName = "yavfl.framework"
+               BlueprintName = "yavfl"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -25,12 +25,12 @@
             buildForRunning = "YES"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8D556F021A727791004FA111"
-               BuildableName = "yavflSampleTests-OSX.xctest"
-               BlueprintName = "yavflSampleTests-OSX"
+               BlueprintIdentifier = "8D7AC98C1A7547BB00574AAC"
+               BuildableName = "yavflTests.xctest"
+               BlueprintName = "yavflTests"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8D556F021A727791004FA111"
-               BuildableName = "yavflSampleTests-OSX.xctest"
-               BlueprintName = "yavflSampleTests-OSX"
+               BlueprintIdentifier = "8D7AC98C1A7547BB00574AAC"
+               BuildableName = "yavflTests.xctest"
+               BlueprintName = "yavflTests"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D556EF11A727791004FA111"
-            BuildableName = "yavflSample-OSX.app"
-            BlueprintName = "yavflSample-OSX"
+            BlueprintIdentifier = "8D7AC9821A7547BB00574AAC"
+            BuildableName = "yavfl.framework"
+            BlueprintName = "yavfl"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -72,15 +72,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D556EF11A727791004FA111"
-            BuildableName = "yavflSample-OSX.app"
-            BlueprintName = "yavflSample-OSX"
+            BlueprintIdentifier = "8D7AC9821A7547BB00574AAC"
+            BuildableName = "yavfl.framework"
+            BlueprintName = "yavfl"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,15 +90,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D556EF11A727791004FA111"
-            BuildableName = "yavflSample-OSX.app"
-            BlueprintName = "yavflSample-OSX"
+            BlueprintIdentifier = "8D7AC9821A7547BB00574AAC"
+            BuildableName = "yavfl.framework"
+            BlueprintName = "yavfl"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
