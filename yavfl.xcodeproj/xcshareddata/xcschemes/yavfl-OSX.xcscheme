@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D7AC9A81A75495900574AAC"
-               BuildableName = "yavflOSX.framework"
-               BlueprintName = "yavflOSX"
+               BuildableName = "yavfl.framework"
+               BlueprintName = "yavfl-OSX"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D7AC9B21A75495900574AAC"
-               BuildableName = "yavflOSXTests.xctest"
-               BlueprintName = "yavflOSXTests"
+               BuildableName = "yavflTests-OSX.xctest"
+               BlueprintName = "yavflTests-OSX"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D7AC9A81A75495900574AAC"
-            BuildableName = "yavflOSX.framework"
-            BlueprintName = "yavflOSX"
+            BuildableName = "yavfl.framework"
+            BlueprintName = "yavfl-OSX"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D7AC9A81A75495900574AAC"
-            BuildableName = "yavflOSX.framework"
-            BlueprintName = "yavflOSX"
+            BuildableName = "yavfl.framework"
+            BlueprintName = "yavfl-OSX"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D7AC9A81A75495900574AAC"
-            BuildableName = "yavflOSX.framework"
-            BlueprintName = "yavflOSX"
+            BuildableName = "yavfl.framework"
+            BlueprintName = "yavfl-OSX"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -91,6 +91,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "yavfl"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
