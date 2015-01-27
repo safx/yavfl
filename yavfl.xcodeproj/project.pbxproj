@@ -18,10 +18,10 @@
 		8D7AC99B1A7547BC00574AAC /* yavfl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7AC9831A7547BB00574AAC /* yavfl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D7AC9A21A7547C300574AAC /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
 		8D7AC9A31A7547C300574AAC /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
-		8D7AC9B41A75495900574AAC /* yavflOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7AC9A91A75495900574AAC /* yavflOSX.framework */; };
+		8D7AC9B41A75495900574AAC /* yavfl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7AC9A91A75495900574AAC /* yavfl.framework */; };
 		8D7AC9BD1A75495900574AAC /* yavflOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7AC9BC1A75495900574AAC /* yavflOSXTests.swift */; };
-		8D7AC9C01A75495900574AAC /* yavflOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7AC9A91A75495900574AAC /* yavflOSX.framework */; };
-		8D7AC9C11A75495900574AAC /* yavflOSX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7AC9A91A75495900574AAC /* yavflOSX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D7AC9C01A75495900574AAC /* yavfl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7AC9A91A75495900574AAC /* yavfl.framework */; };
+		8D7AC9C11A75495900574AAC /* yavfl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7AC9A91A75495900574AAC /* yavfl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D7AC9C81A75496F00574AAC /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
 		8D7AC9C91A75497000574AAC /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
 		8DF1B0D71A349BC200295741 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0D61A349BC200295741 /* AppDelegate.swift */; };
@@ -94,7 +94,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8D7AC9C11A75495900574AAC /* yavflOSX.framework in Embed Frameworks */,
+				8D7AC9C11A75495900574AAC /* yavfl.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,11 +110,11 @@
 		8D556EFD1A727791004FA111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D7AC9831A7547BB00574AAC /* yavfl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = yavfl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7AC9861A7547BB00574AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D7AC98D1A7547BB00574AAC /* yavflTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yavflTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D7AC98D1A7547BB00574AAC /* yavflTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "yavflTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7AC9951A7547BB00574AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = yavflTests/Info.plist; sourceTree = "<group>"; };
 		8D7AC9961A7547BB00574AAC /* yavflTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = yavflTests.swift; path = yavflTests/yavflTests.swift; sourceTree = "<group>"; };
-		8D7AC9A91A75495900574AAC /* yavflOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = yavflOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D7AC9B31A75495900574AAC /* yavflOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yavflOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D7AC9A91A75495900574AAC /* yavfl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = yavfl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D7AC9B31A75495900574AAC /* yavflTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "yavflTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7AC9BB1A75495900574AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D7AC9BC1A75495900574AAC /* yavflOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yavflOSXTests.swift; sourceTree = "<group>"; };
 		8DF1B0D11A349BC200295741 /* yavflSample-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yavflSample-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D7AC9C01A75495900574AAC /* yavflOSX.framework in Frameworks */,
+				8D7AC9C01A75495900574AAC /* yavfl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D7AC9B41A75495900574AAC /* yavflOSX.framework in Frameworks */,
+				8D7AC9B41A75495900574AAC /* yavfl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,9 +251,9 @@
 				8DF1B0D11A349BC200295741 /* yavflSample-iOS.app */,
 				8D556EF21A727791004FA111 /* yavflSample-OSX.app */,
 				8D7AC9831A7547BB00574AAC /* yavfl.framework */,
-				8D7AC98D1A7547BB00574AAC /* yavflTests.xctest */,
-				8D7AC9A91A75495900574AAC /* yavflOSX.framework */,
-				8D7AC9B31A75495900574AAC /* yavflOSXTests.xctest */,
+				8D7AC98D1A7547BB00574AAC /* yavflTests-iOS.xctest */,
+				8D7AC9A91A75495900574AAC /* yavfl.framework */,
+				8D7AC9B31A75495900574AAC /* yavflTests-OSX.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -327,9 +327,9 @@
 			productReference = 8D556EF21A727791004FA111 /* yavflSample-OSX.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8D7AC9821A7547BB00574AAC /* yavfl */ = {
+		8D7AC9821A7547BB00574AAC /* yavfl-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D7AC99C1A7547BC00574AAC /* Build configuration list for PBXNativeTarget "yavfl" */;
+			buildConfigurationList = 8D7AC99C1A7547BC00574AAC /* Build configuration list for PBXNativeTarget "yavfl-iOS" */;
 			buildPhases = (
 				8D7AC97E1A7547BB00574AAC /* Sources */,
 				8D7AC97F1A7547BB00574AAC /* Frameworks */,
@@ -340,14 +340,14 @@
 			);
 			dependencies = (
 			);
-			name = yavfl;
+			name = "yavfl-iOS";
 			productName = yavfl;
 			productReference = 8D7AC9831A7547BB00574AAC /* yavfl.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8D7AC98C1A7547BB00574AAC /* yavflTests */ = {
+		8D7AC98C1A7547BB00574AAC /* yavflTests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D7AC99F1A7547BC00574AAC /* Build configuration list for PBXNativeTarget "yavflTests" */;
+			buildConfigurationList = 8D7AC99F1A7547BC00574AAC /* Build configuration list for PBXNativeTarget "yavflTests-iOS" */;
 			buildPhases = (
 				8D7AC9891A7547BB00574AAC /* Sources */,
 				8D7AC98A1A7547BB00574AAC /* Frameworks */,
@@ -359,14 +359,14 @@
 				8D7AC9901A7547BB00574AAC /* PBXTargetDependency */,
 				8D7AC9921A7547BB00574AAC /* PBXTargetDependency */,
 			);
-			name = yavflTests;
+			name = "yavflTests-iOS";
 			productName = yavflTests;
-			productReference = 8D7AC98D1A7547BB00574AAC /* yavflTests.xctest */;
+			productReference = 8D7AC98D1A7547BB00574AAC /* yavflTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8D7AC9A81A75495900574AAC /* yavflOSX */ = {
+		8D7AC9A81A75495900574AAC /* yavfl-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D7AC9C21A75495900574AAC /* Build configuration list for PBXNativeTarget "yavflOSX" */;
+			buildConfigurationList = 8D7AC9C21A75495900574AAC /* Build configuration list for PBXNativeTarget "yavfl-OSX" */;
 			buildPhases = (
 				8D7AC9A41A75495900574AAC /* Sources */,
 				8D7AC9A51A75495900574AAC /* Frameworks */,
@@ -377,14 +377,14 @@
 			);
 			dependencies = (
 			);
-			name = yavflOSX;
+			name = "yavfl-OSX";
 			productName = yavflOSX;
-			productReference = 8D7AC9A91A75495900574AAC /* yavflOSX.framework */;
+			productReference = 8D7AC9A91A75495900574AAC /* yavfl.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8D7AC9B21A75495900574AAC /* yavflOSXTests */ = {
+		8D7AC9B21A75495900574AAC /* yavflTests-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D7AC9C51A75495900574AAC /* Build configuration list for PBXNativeTarget "yavflOSXTests" */;
+			buildConfigurationList = 8D7AC9C51A75495900574AAC /* Build configuration list for PBXNativeTarget "yavflTests-OSX" */;
 			buildPhases = (
 				8D7AC9AF1A75495900574AAC /* Sources */,
 				8D7AC9B01A75495900574AAC /* Frameworks */,
@@ -396,9 +396,9 @@
 				8D7AC9B61A75495900574AAC /* PBXTargetDependency */,
 				8D7AC9B81A75495900574AAC /* PBXTargetDependency */,
 			);
-			name = yavflOSXTests;
+			name = "yavflTests-OSX";
 			productName = yavflOSXTests;
-			productReference = 8D7AC9B31A75495900574AAC /* yavflOSXTests.xctest */;
+			productReference = 8D7AC9B31A75495900574AAC /* yavflTests-OSX.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		8DF1B0D01A349BC200295741 /* yavflSample-iOS */ = {
@@ -462,10 +462,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D7AC9821A7547BB00574AAC /* yavfl */,
-				8D7AC9A81A75495900574AAC /* yavflOSX */,
-				8D7AC98C1A7547BB00574AAC /* yavflTests */,
-				8D7AC9B21A75495900574AAC /* yavflOSXTests */,
+				8D7AC9821A7547BB00574AAC /* yavfl-iOS */,
+				8D7AC9A81A75495900574AAC /* yavfl-OSX */,
+				8D7AC98C1A7547BB00574AAC /* yavflTests-iOS */,
+				8D7AC9B21A75495900574AAC /* yavflTests-OSX */,
 				8DF1B0D01A349BC200295741 /* yavflSample-iOS */,
 				8D556EF11A727791004FA111 /* yavflSample-OSX */,
 			);
@@ -581,7 +581,7 @@
 /* Begin PBXTargetDependency section */
 		8D7AC9901A7547BB00574AAC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D7AC9821A7547BB00574AAC /* yavfl */;
+			target = 8D7AC9821A7547BB00574AAC /* yavfl-iOS */;
 			targetProxy = 8D7AC98F1A7547BB00574AAC /* PBXContainerItemProxy */;
 		};
 		8D7AC9921A7547BB00574AAC /* PBXTargetDependency */ = {
@@ -591,12 +591,12 @@
 		};
 		8D7AC9991A7547BC00574AAC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D7AC9821A7547BB00574AAC /* yavfl */;
+			target = 8D7AC9821A7547BB00574AAC /* yavfl-iOS */;
 			targetProxy = 8D7AC9981A7547BC00574AAC /* PBXContainerItemProxy */;
 		};
 		8D7AC9B61A75495900574AAC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D7AC9A81A75495900574AAC /* yavflOSX */;
+			target = 8D7AC9A81A75495900574AAC /* yavfl-OSX */;
 			targetProxy = 8D7AC9B51A75495900574AAC /* PBXContainerItemProxy */;
 		};
 		8D7AC9B81A75495900574AAC /* PBXTargetDependency */ = {
@@ -606,7 +606,7 @@
 		};
 		8D7AC9BF1A75495900574AAC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D7AC9A81A75495900574AAC /* yavflOSX */;
+			target = 8D7AC9A81A75495900574AAC /* yavfl-OSX */;
 			targetProxy = 8D7AC9BE1A75495900574AAC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -680,7 +680,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = yavfl;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -699,7 +699,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = yavfl;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -755,7 +755,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = yavfl;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -779,7 +779,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = yavfl;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -937,37 +937,41 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8D7AC99C1A7547BC00574AAC /* Build configuration list for PBXNativeTarget "yavfl" */ = {
+		8D7AC99C1A7547BC00574AAC /* Build configuration list for PBXNativeTarget "yavfl-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D7AC99D1A7547BC00574AAC /* Debug */,
 				8D7AC99E1A7547BC00574AAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		8D7AC99F1A7547BC00574AAC /* Build configuration list for PBXNativeTarget "yavflTests" */ = {
+		8D7AC99F1A7547BC00574AAC /* Build configuration list for PBXNativeTarget "yavflTests-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D7AC9A01A7547BC00574AAC /* Debug */,
 				8D7AC9A11A7547BC00574AAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		8D7AC9C21A75495900574AAC /* Build configuration list for PBXNativeTarget "yavflOSX" */ = {
+		8D7AC9C21A75495900574AAC /* Build configuration list for PBXNativeTarget "yavfl-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D7AC9C31A75495900574AAC /* Debug */,
 				8D7AC9C41A75495900574AAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		8D7AC9C51A75495900574AAC /* Build configuration list for PBXNativeTarget "yavflOSXTests" */ = {
+		8D7AC9C51A75495900574AAC /* Build configuration list for PBXNativeTarget "yavflTests-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D7AC9C61A75495900574AAC /* Debug */,
 				8D7AC9C71A75495900574AAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DF1B0CC1A349BC200295741 /* Build configuration list for PBXProject "yavfl" */ = {
 			isa = XCConfigurationList;

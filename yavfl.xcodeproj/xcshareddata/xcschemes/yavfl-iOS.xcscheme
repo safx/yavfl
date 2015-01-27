@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D7AC9821A7547BB00574AAC"
                BuildableName = "yavfl.framework"
-               BlueprintName = "yavfl"
+               BlueprintName = "yavfl-iOS"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D7AC98C1A7547BB00574AAC"
-               BuildableName = "yavflTests.xctest"
-               BlueprintName = "yavflTests"
+               BuildableName = "yavflTests-iOS.xctest"
+               BlueprintName = "yavflTests-iOS"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D7AC98C1A7547BB00574AAC"
-               BuildableName = "yavflTests.xctest"
-               BlueprintName = "yavflTests"
+               BuildableName = "yavflTests-iOS.xctest"
+               BlueprintName = "yavflTests-iOS"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,7 +58,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D7AC9821A7547BB00574AAC"
             BuildableName = "yavfl.framework"
-            BlueprintName = "yavfl"
+            BlueprintName = "yavfl-iOS"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,7 +77,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D7AC9821A7547BB00574AAC"
             BuildableName = "yavfl.framework"
-            BlueprintName = "yavfl"
+            BlueprintName = "yavfl-iOS"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -95,7 +95,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D7AC9821A7547BB00574AAC"
             BuildableName = "yavfl.framework"
-            BlueprintName = "yavfl"
+            BlueprintName = "yavfl-iOS"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
