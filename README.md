@@ -4,6 +4,7 @@
 ![Platform](https://img.shields.io/cocoapods/p/yavfl.svg?style=flat)
 ![License](https://img.shields.io/cocoapods/l/yavfl.svg?style=flat)
 ![Version](https://img.shields.io/cocoapods/v/yavfl.svg?style=flat)
+![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)
 
 yavfl is Yet Anoter Visual Format Language for Auto Layout.
 
