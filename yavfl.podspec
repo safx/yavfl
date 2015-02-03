@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "yavfl"
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   s.summary      = "Yet Anoter Visual Format Language for Auto Layout in Swift"
   s.homepage     = "https://github.com/safx/yavfl"
   s.license      = { :type => "MIT", :file => "LICENSE" }
