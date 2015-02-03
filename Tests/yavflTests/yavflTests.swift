@@ -48,4 +48,22 @@ class yavflTests: XCTestCase {
         XCTAssertEqual(opt(|[x]|)                   , NSLayoutFormatOptions())
         XCTAssertEqual(opt(|[x]| % .AlignAllCenterY), NSLayoutFormatOptions.AlignAllCenterY)
     }
+
+    func testCapture() {
+        let par = UIView()
+        let v = UIView()
+        par.addSubview(v)
+        
+        var q1: [AnyObject]?
+        visualFormat(v) { v in
+            q1 = .H ~ |-[v]
+        }
+        XCTAssertEqual(countElements(q1!), 1)
+
+        var q2: [AnyObject]?
+        visualFormat(v) { v in
+            q2 = .H ~ |-[v]-|
+        }
+        XCTAssertEqual(countElements(q2!), 2)
+    }
 }

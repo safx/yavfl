@@ -462,7 +462,7 @@ public func ~(lhs: ViewExpression, rhs: Int) -> ViewExpression {
     }
 }
 
-public func ~(lhs: LayoutOrientation, rhs: VisualFormat) -> () {
+public func ~(lhs: LayoutOrientation, rhs: VisualFormat) -> [AnyObject] {
     if let superView = rhs.superView? {
         let exp = lhs.description + ":" + rhs.description
         let dic = rhs.viewsDictionary
@@ -470,6 +470,7 @@ public func ~(lhs: LayoutOrientation, rhs: VisualFormat) -> () {
         //println("\(exp)")
         let c = NSLayoutConstraint.constraintsWithVisualFormat(exp, options: opts, metrics: nil, views: dic)
         superView.addConstraints(c)
+        return c
     }
-    return ()
+    return []
 }
