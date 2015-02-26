@@ -30,35 +30,35 @@ extension YAVView {
 
 
 public func visualFormat(v1: YAVView,
-                         block: (ViewExpression) -> ()) {
+                         closure: (ViewExpression) -> ()) {
     v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
 
-    block(.View(LayoutViewName(v1, 1)))
+    closure(.View(LayoutViewName(v1, 1)))
 
     v1.updateConstraints()
 }
 
 public func visualFormat(v1: YAVView, v2: YAVView,
-                         block: (ViewExpression, ViewExpression) -> ()) {
+                         closure: (ViewExpression, ViewExpression) -> ()) {
     v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
     v2.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
 
-    block(.View(LayoutViewName(v1, 1)),
-          .View(LayoutViewName(v2, 2)))
+    closure(.View(LayoutViewName(v1, 1)),
+            .View(LayoutViewName(v2, 2)))
 
     v1.updateConstraints()
     v2.updateConstraints()
 }
 
 public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView,
-                         block: (ViewExpression, ViewExpression, ViewExpression) -> ()) {
+                         closure: (ViewExpression, ViewExpression, ViewExpression) -> ()) {
     v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
     v2.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
     v3.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
 
-    block(.View(LayoutViewName(v1, 1)),
-          .View(LayoutViewName(v2, 2)),
-          .View(LayoutViewName(v3, 3)))
+    closure(.View(LayoutViewName(v1, 1)),
+            .View(LayoutViewName(v2, 2)),
+            .View(LayoutViewName(v3, 3)))
 
     v1.updateConstraints()
     v2.updateConstraints()
@@ -66,16 +66,16 @@ public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView,
 }
 
 public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView, v4: YAVView,
-                         block: (ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
+                         closure: (ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
     v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
     v2.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
     v3.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
     v4.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
 
-    block(.View(LayoutViewName(v1, 1)),
-          .View(LayoutViewName(v2, 2)),
-          .View(LayoutViewName(v3, 3)),
-          .View(LayoutViewName(v4, 4)))
+    closure(.View(LayoutViewName(v1, 1)),
+            .View(LayoutViewName(v2, 2)),
+            .View(LayoutViewName(v3, 3)),
+            .View(LayoutViewName(v4, 4)))
 
     v1.updateConstraints()
     v2.updateConstraints()
@@ -84,18 +84,18 @@ public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView, v4: YAVView,
 }
 
 public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView, v4: YAVView, v5: YAVView,
-                         block: (ViewExpression, ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
+                         closure: (ViewExpression, ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
     v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
     v2.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
     v3.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
     v4.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
     v5.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
 
-    block(.View(LayoutViewName(v1, 1)),
-          .View(LayoutViewName(v2, 2)),
-          .View(LayoutViewName(v3, 3)),
-          .View(LayoutViewName(v4, 4)),
-          .View(LayoutViewName(v5, 5)))
+    closure(.View(LayoutViewName(v1, 1)),
+            .View(LayoutViewName(v2, 2)),
+            .View(LayoutViewName(v3, 3)),
+            .View(LayoutViewName(v4, 4)),
+            .View(LayoutViewName(v5, 5)))
 
     v1.updateConstraints()
     v2.updateConstraints()
@@ -157,7 +157,7 @@ public enum LayoutRelation : String, Printable {
     case LessThanOrEqual = "<="
 
     public var description: String {
-        return self.rawValue
+        return rawValue
     }
 }
 
@@ -182,7 +182,7 @@ public enum LayoutOrientation : String, Printable {
     case H = "H"
 
     public var description: String {
-        return self.rawValue
+        return rawValue
     }
 }
 
