@@ -108,6 +108,7 @@
 		8D556EF81A727791004FA111 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D556EFA1A727791004FA111 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8D556EFD1A727791004FA111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8D57035A1A9F386D00AB719F /* yavfl.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = yavfl.playground; sourceTree = "<group>"; };
 		8D7AC9831A7547BB00574AAC /* yavfl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = yavfl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7AC9861A7547BB00574AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D7AC98D1A7547BB00574AAC /* yavflTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "yavflTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,6 +237,7 @@
 		8DF1B0C81A349BC200295741 = {
 			isa = PBXGroup;
 			children = (
+				8D57035A1A9F386D00AB719F /* yavfl.playground */,
 				8DF1B0F61A349D0D00295741 /* yavfl */,
 				8DF1B0D31A349BC200295741 /* yavflSample-iOS */,
 				8D556EF31A727791004FA111 /* yavflSample-OSX */,
