@@ -242,7 +242,6 @@ public class LayoutView : Printable {
 // MARK: <visualFormatString>
 
 public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralConvertible {
-    case Orientation(LayoutOrientation)
     case Superview
     case View(LayoutView)
     case Connection
@@ -253,7 +252,6 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
 
     public var description: String {
         switch self {
-        case Orientation(let o): return o.description
         case Superview:          return "|"
         case View(let v):        return "[" + v.description + "]"
         case Connection:         return "-"
@@ -275,7 +273,7 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
                 }
             }
         default:
-            break;
+            break
         }
         return NSLayoutFormatOptions()
     }
