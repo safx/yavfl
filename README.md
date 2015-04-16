@@ -80,3 +80,8 @@ Some parts of the syntax are changed due to Swift's syntax limitation.
     pod 'yavfl'
 
 Or, just copy `yavfl.swift` into your project.
+
+## Other Resources (in Japanese)
+
+* [Blog article](http://safx-dev.blogspot.jp/2014/12/auto-layoutvisual-format-languageswift.html)
+* [Slide @ Speaker Deck](https://speakerdeck.com/matuyuji/visual-format-languageka-jian-dan-nishu-keruswiftraihurari-yavfl)
