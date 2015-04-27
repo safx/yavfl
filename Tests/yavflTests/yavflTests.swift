@@ -58,12 +58,12 @@ class yavflTests: XCTestCase {
         visualFormat(v) { v in
             q1 = .H ~ |-[v]
         }
-        XCTAssertEqual(countElements(q1!), 1)
+        XCTAssertEqual(count(q1!), 1)
 
         var q2: [AnyObject]?
         visualFormat(v) { v in
             q2 = .H ~ |-[v]-|
         }
-        XCTAssertEqual(countElements(q2!), 2)
+        XCTAssertEqual(count(q2!), 2)
     }
 }

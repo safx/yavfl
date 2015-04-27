@@ -194,7 +194,7 @@ public class LayoutView : Printable {
 
     public var description: String {
         let v = view.description
-        if countElements(predicates) == 0 {
+        if count(predicates) == 0 {
             return v
         }
         let p = ",".join(predicates.map { $0.description })
@@ -215,7 +215,7 @@ public class LayoutView : Printable {
     }
 
     public init(_ elements: [ViewExpression]) {
-        assert(countElements(elements) > 0)
+        assert(count(elements) > 0)
         switch elements[0] {
         case .View(let v):
             self.view = v
@@ -312,7 +312,7 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
                 s.append(sv)
             }
         }
-        if countElements(s) > 0 {
+        if count(s) > 0 {
             return s[0] // FIXME
         }
         return nil
@@ -461,7 +461,7 @@ public func ~(lhs: ViewExpression, rhs: Int) -> ViewExpression {
 }
 
 public func ~(lhs: LayoutOrientation, rhs: VisualFormat) -> [AnyObject] {
-    if let superView = rhs.superView? {
+    if let superView = rhs.superView {
         let exp = lhs.description + ":" + rhs.description
         let dic = rhs.viewsDictionary
         let opts = rhs.options

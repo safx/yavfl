@@ -50,20 +50,20 @@ class yavflOSXTests: XCTestCase {
     }
     
     func testCapture() {
-        let par = UIView()
-        let v = UIView()
+        let par = NSView()
+        let v = NSView()
         par.addSubview(v)
         
         var q1: [AnyObject]?
         visualFormat(v) { v in
             q1 = .H ~ |-[v]
         }
-        XCTAssertEqual(countElements(q1!), 1)
+        XCTAssertEqual(count(q1!), 1)
         
         var q2: [AnyObject]?
         visualFormat(v) { v in
             q2 = .H ~ |-[v]-|
         }
-        XCTAssertEqual(countElements(q2!), 2)
+        XCTAssertEqual(count(q2!), 2)
     }
 }
