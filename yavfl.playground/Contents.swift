@@ -4,7 +4,6 @@ import UIKit
 import XCPlayground
 import yavfl
 
-
 func Root(color: UIColor = UIColor.redColor()) -> UIView {
     let v = UIView(frame: CGRect(x: 0, y: 0, width: 280, height: 150))
     v.layer.borderWidth = 1
@@ -28,13 +27,13 @@ func View(text: String, color: UIColor = UIColor.redColor()) -> UIView {
 let x = View("x")
 let y = View("y")
 
-
 XCPShowView("yavfl", root)
 
+//: ### Sample 1
 visualFormat(x, y) { x, y in
     .V ~ |-20-[x,==80]
     .V ~ [y,==50]
     .H ~ |-20-[x,==y]-10-[y]-20-| % .AlignAllCenterY
 }
 
-
+let tmp = root
