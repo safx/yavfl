@@ -216,26 +216,26 @@ public class LayoutView : Printable {
 
     public init(_ elements: [ViewExpression]) {
         assert(count(elements) > 0)
-        switch elements[0] {
+
+        let len = count(elements)
+        let view_part = elements[0]
+        let pred_part = elements[1..<len]
+
+        switch view_part {
         case .View(let v):
             self.view = v
-        case .Predicate:
+        default:
             fatalError("Error")
         }
 
-        var preds = [LayoutPredicate]()
-        var i = 0
-        for e in elements {
-            ++i
-            if i == 1 { continue }
+        self.predicates = map(pred_part) { e in
             switch e {
-            case .View(let v):
-                fatalError("Error")
             case .Predicate(let p):
-                preds.append(p)
+                return p
+            default:
+                fatalError("Error")
             }
         }
-        self.predicates = preds
     }
 }
 
@@ -262,6 +262,7 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
         }
     }
 
+    // FIXME: report error for multiple options
     var options: NSLayoutFormatOptions {
         switch self {
         case Options(let opts): return opts
