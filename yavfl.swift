@@ -280,22 +280,14 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
     }
 
     var relatedViews: [LayoutViewName] {
-        var d = [LayoutViewName]()
         switch self {
         case View(let v):
-            for i in v.relatedViews {
-                d.append(i)
-            }
+            return v.relatedViews
         case Composition(let c):
-            for i in c {
-                for j in i.relatedViews {
-                    d.append(j)
-                }
-            }
+            return c.flatMap { $0.relatedViews }
         default:
-            break;
+            return []
         }
-        return d
     }
 
     var viewsDictionary: [NSObject:AnyObject] {
@@ -313,6 +305,7 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
                 s.append(sv)
             }
         }
+
         if count(s) > 0 {
             return s[0] // FIXME
         }
@@ -328,13 +321,12 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
     }
 
     public init(composition elements: VisualFormat...) {
-        var t = [VisualFormat]()
-        for elem in elements {
-            switch elem {
+        let t = flatMap(elements) { e -> [VisualFormat] in
+            switch e {
             case Composition(let c):
-                for i in c { t.append(i) }
+                return c
             default:
-                t.append(elem)
+                return [e]
             }
         }
         self = .Composition(t)
