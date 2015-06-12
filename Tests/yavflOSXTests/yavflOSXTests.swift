@@ -47,6 +47,9 @@ class yavflOSXTests: XCTestCase {
     func testOptions() {
         XCTAssertEqual(opt(|[x]|)                   , NSLayoutFormatOptions())
         XCTAssertEqual(opt(|[x]| % .AlignAllCenterY), NSLayoutFormatOptions.AlignAllCenterY)
+
+        XCTAssertEqual(v(|[x]|)                   , "[x]")
+        XCTAssertEqual(v(|[x]| % .AlignAllCenterY), "[x]")
     }
     
     func testCapture() {
