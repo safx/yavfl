@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+@testable import yavfl
 
 class yavflTests: XCTestCase {
     let x : ViewExpression = .View(LayoutViewName(UIView(), 1))
@@ -58,12 +59,12 @@ class yavflTests: XCTestCase {
         visualFormat(v) { v in
             q1 = .H ~ |-[v]
         }
-        XCTAssertEqual(count(q1!), 1)
+        XCTAssertEqual((q1!).count, 1)
 
         var q2: [AnyObject]?
         visualFormat(v) { v in
             q2 = .H ~ |-[v]-|
         }
-        XCTAssertEqual(count(q2!), 2)
+        XCTAssertEqual((q2!).count, 2)
     }
 }

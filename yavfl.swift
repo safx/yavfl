@@ -18,30 +18,19 @@ import Foundation
     public typealias YAVView = NSView
 #endif
 
-extension YAVView {
-    private func yav_setTranslatesAutoresizingMaskIntoConstraints(flag: Bool) {
-        #if os(iOS)
-            setTranslatesAutoresizingMaskIntoConstraints(flag)
-        #else
-            translatesAutoresizingMaskIntoConstraints = flag
-        #endif
-    }
-}
-
-
 public func visualFormat(v1: YAVView,
                          closure: (ViewExpression) -> ()) {
-    v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v1.translatesAutoresizingMaskIntoConstraints = false
 
     closure(.View(LayoutViewName(v1, 1)))
 
     v1.updateConstraints()
 }
 
-public func visualFormat(v1: YAVView, v2: YAVView,
+public func visualFormat(v1: YAVView, _ v2: YAVView,
                          closure: (ViewExpression, ViewExpression) -> ()) {
-    v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
-    v2.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v1.translatesAutoresizingMaskIntoConstraints = false
+    v2.translatesAutoresizingMaskIntoConstraints = false
 
     closure(.View(LayoutViewName(v1, 1)),
             .View(LayoutViewName(v2, 2)))
@@ -50,11 +39,11 @@ public func visualFormat(v1: YAVView, v2: YAVView,
     v2.updateConstraints()
 }
 
-public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView,
+public func visualFormat(v1: YAVView, _ v2: YAVView, _ v3: YAVView,
                          closure: (ViewExpression, ViewExpression, ViewExpression) -> ()) {
-    v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
-    v2.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
-    v3.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v1.translatesAutoresizingMaskIntoConstraints = false
+    v2.translatesAutoresizingMaskIntoConstraints = false
+    v3.translatesAutoresizingMaskIntoConstraints = false
 
     closure(.View(LayoutViewName(v1, 1)),
             .View(LayoutViewName(v2, 2)),
@@ -65,12 +54,12 @@ public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView,
     v3.updateConstraints()
 }
 
-public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView, v4: YAVView,
+public func visualFormat(v1: YAVView, _ v2: YAVView, _ v3: YAVView, _ v4: YAVView,
                          closure: (ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
-    v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
-    v2.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
-    v3.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
-    v4.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v1.translatesAutoresizingMaskIntoConstraints = false
+    v2.translatesAutoresizingMaskIntoConstraints = false
+    v3.translatesAutoresizingMaskIntoConstraints = false
+    v4.translatesAutoresizingMaskIntoConstraints = false
 
     closure(.View(LayoutViewName(v1, 1)),
             .View(LayoutViewName(v2, 2)),
@@ -85,11 +74,11 @@ public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView, v4: YAVView,
 
 public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView, v4: YAVView, v5: YAVView,
                          closure: (ViewExpression, ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
-    v1.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
-    v2.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
-    v3.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
-    v4.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
-    v5.yav_setTranslatesAutoresizingMaskIntoConstraints(false)
+    v1.translatesAutoresizingMaskIntoConstraints = false
+    v2.translatesAutoresizingMaskIntoConstraints = false
+    v3.translatesAutoresizingMaskIntoConstraints = false
+    v4.translatesAutoresizingMaskIntoConstraints = false
+    v5.translatesAutoresizingMaskIntoConstraints = false
 
     closure(.View(LayoutViewName(v1, 1)),
             .View(LayoutViewName(v2, 2)),
@@ -113,7 +102,7 @@ public enum ViewExpression {
 
 // MARK: <viewName>
 
-public class LayoutViewName : Printable {
+public class LayoutViewName : CustomStringConvertible {
     let view: YAVView
     let index: Int
 
@@ -129,7 +118,7 @@ public class LayoutViewName : Printable {
 
 // MARK: <predicate>
 
-public class LayoutPredicate : Printable {
+public class LayoutPredicate : CustomStringConvertible {
     let relation: LayoutRelation
     let object: LayoutObjectOfPredicate
     let priority: Int?
@@ -151,7 +140,7 @@ public class LayoutPredicate : Printable {
 
 // MARK: <relation>
 
-public enum LayoutRelation : String, Printable {
+public enum LayoutRelation : String, CustomStringConvertible {
     case Equal = "=="
     case GreaterThanOrEqual = ">="
     case LessThanOrEqual = "<="
@@ -163,7 +152,7 @@ public enum LayoutRelation : String, Printable {
 
 // MARK: <objectOfPredicate>
 
-public enum LayoutObjectOfPredicate : Printable {
+public enum LayoutObjectOfPredicate : CustomStringConvertible {
     case Constant(Int)
     case View(LayoutViewName)
 
@@ -177,7 +166,7 @@ public enum LayoutObjectOfPredicate : Printable {
 
 // MARK: <orientation>
 
-public enum LayoutOrientation : String, Printable {
+public enum LayoutOrientation : String, CustomStringConvertible {
     case V = "V"
     case H = "H"
 
@@ -188,13 +177,13 @@ public enum LayoutOrientation : String, Printable {
 
 // MARK: <view>
 
-public class LayoutView : Printable {
+public class LayoutView : CustomStringConvertible {
     let view: LayoutViewName
     let predicates: [LayoutPredicate]
 
     public var description: String {
         let v = view.description
-        if count(predicates) == 0 {
+        if predicates.count == 0 {
             return v
         }
         let p = ",".join(predicates.map { $0.description })
@@ -215,9 +204,9 @@ public class LayoutView : Printable {
     }
 
     public init(_ elements: [ViewExpression]) {
-        assert(count(elements) > 0)
+        assert(elements.count > 0)
 
-        let len = count(elements)
+        let len = elements.count
         let view_part = elements[0]
         let pred_part = elements[1..<len]
 
@@ -228,7 +217,7 @@ public class LayoutView : Printable {
             fatalError("Error")
         }
 
-        self.predicates = map(pred_part) { e in
+        self.predicates = pred_part.map { e in
             switch e {
             case .Predicate(let p):
                 return p
@@ -241,7 +230,7 @@ public class LayoutView : Printable {
 
 // MARK: <visualFormatString>
 
-public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralConvertible {
+public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, ArrayLiteralConvertible {
     case Superview
     case View(LayoutView)
     case Connection
@@ -290,26 +279,12 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
         }
     }
 
-    var viewsDictionary: [NSObject:AnyObject] {
-        var d = [NSObject:AnyObject]()
+    var viewsDictionary: [String:AnyObject] {
+        var d = [String:AnyObject]()
         for v in relatedViews {
             d[v.description] = v.view
         }
         return d
-    }
-
-    var superView: YAVView? {
-        var s = [YAVView]()
-        for v in relatedViews {
-            if let sv = v.view.superview {
-                s.append(sv)
-            }
-        }
-
-        if count(s) > 0 {
-            return s[0] // FIXME
-        }
-        return nil
     }
 
     public init(integerLiteral value: IntegerLiteralType) {
@@ -321,7 +296,7 @@ public enum VisualFormat : Printable, IntegerLiteralConvertible, ArrayLiteralCon
     }
 
     public init(composition elements: VisualFormat...) {
-        let t = flatMap(elements) { e -> [VisualFormat] in
+        let t = elements.flatMap { e -> [VisualFormat] in
             switch e {
             case Composition(let c):
                 return c
@@ -409,7 +384,7 @@ public prefix func ==(n: Int) -> ViewExpression {
 }
 
 public prefix func ==(view: ViewExpression) -> ViewExpression {
-    return createViewExpressionPredicate(view, .Equal)
+    return createViewExpressionPredicate(view, relation: .Equal)
 }
 
 
@@ -420,7 +395,7 @@ public prefix func <=(n: Int) -> ViewExpression {
 }
 
 public prefix func <=(view: ViewExpression) -> ViewExpression {
-    return createViewExpressionPredicate(view, .LessThanOrEqual)
+    return createViewExpressionPredicate(view, relation: .LessThanOrEqual)
 }
 
 
@@ -431,7 +406,7 @@ public prefix func >=(n: Int) -> ViewExpression {
 }
 
 public prefix func >=(view: ViewExpression) -> ViewExpression {
-    return createViewExpressionPredicate(view, .GreaterThanOrEqual)
+    return createViewExpressionPredicate(view, relation: .GreaterThanOrEqual)
 }
 
 
@@ -454,14 +429,12 @@ public func ~(lhs: ViewExpression, rhs: Int) -> ViewExpression {
 }
 
 public func ~(lhs: LayoutOrientation, rhs: VisualFormat) -> [AnyObject] {
-    if let superView = rhs.superView {
-        let exp = lhs.description + ":" + rhs.description
-        let dic = rhs.viewsDictionary
-        let opts = rhs.options
-        //println("\(exp)")
-        let c = NSLayoutConstraint.constraintsWithVisualFormat(exp, options: opts, metrics: nil, views: dic)
-        superView.addConstraints(c)
-        return c
-    }
-    return []
+    let exp = lhs.description + ":" + rhs.description
+    let dic = rhs.viewsDictionary
+    let opts = rhs.options
+    //println("\(exp)")
+
+    let c = NSLayoutConstraint.constraintsWithVisualFormat(exp, options: opts, metrics: nil, views: dic)
+    NSLayoutConstraint.activateConstraints(c)
+    return c
 }

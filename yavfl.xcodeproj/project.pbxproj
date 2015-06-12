@@ -11,24 +11,22 @@
 		8D556EF91A727791004FA111 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D556EF81A727791004FA111 /* ViewController.swift */; };
 		8D556EFB1A727791004FA111 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D556EFA1A727791004FA111 /* Images.xcassets */; };
 		8D556EFE1A727791004FA111 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D556EFC1A727791004FA111 /* Main.storyboard */; };
-		8D556F111A727855004FA111 /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
 		8D7AC98E1A7547BB00574AAC /* yavfl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7AC9831A7547BB00574AAC /* yavfl.framework */; };
 		8D7AC9971A7547BC00574AAC /* yavflTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7AC9961A7547BB00574AAC /* yavflTests.swift */; };
 		8D7AC99A1A7547BC00574AAC /* yavfl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7AC9831A7547BB00574AAC /* yavfl.framework */; };
 		8D7AC99B1A7547BC00574AAC /* yavfl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7AC9831A7547BB00574AAC /* yavfl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D7AC9A21A7547C300574AAC /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
-		8D7AC9A31A7547C300574AAC /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
 		8D7AC9B41A75495900574AAC /* yavfl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7AC9A91A75495900574AAC /* yavfl.framework */; };
 		8D7AC9BD1A75495900574AAC /* yavflOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7AC9BC1A75495900574AAC /* yavflOSXTests.swift */; };
 		8D7AC9C01A75495900574AAC /* yavfl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7AC9A91A75495900574AAC /* yavfl.framework */; };
 		8D7AC9C11A75495900574AAC /* yavfl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7AC9A91A75495900574AAC /* yavfl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D7AC9C81A75496F00574AAC /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
-		8D7AC9C91A75497000574AAC /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
 		8DF1B0D71A349BC200295741 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0D61A349BC200295741 /* AppDelegate.swift */; };
 		8DF1B0D91A349BC200295741 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0D81A349BC200295741 /* ViewController.swift */; };
 		8DF1B0DC1A349BC200295741 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF1B0DA1A349BC200295741 /* Main.storyboard */; };
 		8DF1B0DE1A349BC200295741 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DF1B0DD1A349BC200295741 /* Images.xcassets */; };
-		8DF1B0F81A349D2500295741 /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
+		8DF2D42D1B2AF45B005D77DC /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
+		8DF2D42E1B2AF45C005D77DC /* yavfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF1B0F71A349D2500295741 /* yavfl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -428,7 +426,8 @@
 		8DF1B0C91A349BC200295741 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Safx Developers";
 				TargetAttributes = {
 					8D556EF11A727791004FA111 = {
@@ -528,7 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D556F111A727855004FA111 /* yavfl.swift in Sources */,
+				8DF2D42E1B2AF45C005D77DC /* yavfl.swift in Sources */,
 				8D556EF91A727791004FA111 /* ViewController.swift in Sources */,
 				8D556EF71A727791004FA111 /* AppDelegate.swift in Sources */,
 			);
@@ -546,7 +545,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D7AC9A31A7547C300574AAC /* yavfl.swift in Sources */,
 				8D7AC9971A7547BC00574AAC /* yavflTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,7 +561,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D7AC9C91A75497000574AAC /* yavfl.swift in Sources */,
 				8D7AC9BD1A75495900574AAC /* yavflOSXTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,8 +569,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DF2D42D1B2AF45B005D77DC /* yavfl.swift in Sources */,
 				8DF1B0D91A349BC200295741 /* ViewController.swift in Sources */,
-				8DF1B0F81A349D2500295741 /* yavfl.swift in Sources */,
 				8DF1B0D71A349BC200295741 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,6 +643,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sample/yavflSample-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blogspot.safx-dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -661,6 +659,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sample/yavflSample-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blogspot.safx-dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -682,6 +681,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blogspot.safx-dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = yavfl;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -701,6 +701,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blogspot.safx-dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = yavfl;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -721,6 +722,7 @@
 				);
 				INFOPLIST_FILE = Tests/yavflTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blogspot.safx-dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -734,6 +736,7 @@
 				);
 				INFOPLIST_FILE = Tests/yavflTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blogspot.safx-dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -757,6 +760,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blogspot.safx-dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = yavfl;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -781,6 +785,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blogspot.safx-dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = yavfl;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -804,6 +809,7 @@
 				INFOPLIST_FILE = Tests/yavflOSXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blogspot.safx-dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -821,6 +827,7 @@
 				INFOPLIST_FILE = Tests/yavflOSXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blogspot.safx-dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -846,8 +853,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -892,6 +901,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -914,6 +924,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sample/yavflSample-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blogspot.safx-dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -925,6 +936,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sample/yavflSample-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blogspot.safx-dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
