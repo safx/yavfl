@@ -19,7 +19,7 @@ import Foundation
 #endif
 
 public func visualFormat(v1: YAVView,
-                         closure: (ViewExpression) -> ()) {
+                         @noescape closure: (ViewExpression) -> ()) {
     v1.translatesAutoresizingMaskIntoConstraints = false
 
     closure(.View(LayoutViewName(v1, 1)))
@@ -28,7 +28,7 @@ public func visualFormat(v1: YAVView,
 }
 
 public func visualFormat(v1: YAVView, _ v2: YAVView,
-                         closure: (ViewExpression, ViewExpression) -> ()) {
+                         @noescape closure: (ViewExpression, ViewExpression) -> ()) {
     v1.translatesAutoresizingMaskIntoConstraints = false
     v2.translatesAutoresizingMaskIntoConstraints = false
 
@@ -40,7 +40,7 @@ public func visualFormat(v1: YAVView, _ v2: YAVView,
 }
 
 public func visualFormat(v1: YAVView, _ v2: YAVView, _ v3: YAVView,
-                         closure: (ViewExpression, ViewExpression, ViewExpression) -> ()) {
+                         @noescape closure: (ViewExpression, ViewExpression, ViewExpression) -> ()) {
     v1.translatesAutoresizingMaskIntoConstraints = false
     v2.translatesAutoresizingMaskIntoConstraints = false
     v3.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +55,7 @@ public func visualFormat(v1: YAVView, _ v2: YAVView, _ v3: YAVView,
 }
 
 public func visualFormat(v1: YAVView, _ v2: YAVView, _ v3: YAVView, _ v4: YAVView,
-                         closure: (ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
+                         @noescape closure: (ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
     v1.translatesAutoresizingMaskIntoConstraints = false
     v2.translatesAutoresizingMaskIntoConstraints = false
     v3.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +73,7 @@ public func visualFormat(v1: YAVView, _ v2: YAVView, _ v3: YAVView, _ v4: YAVVie
 }
 
 public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView, v4: YAVView, v5: YAVView,
-                         closure: (ViewExpression, ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
+                         @noescape closure: (ViewExpression, ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
     v1.translatesAutoresizingMaskIntoConstraints = false
     v2.translatesAutoresizingMaskIntoConstraints = false
     v3.translatesAutoresizingMaskIntoConstraints = false
