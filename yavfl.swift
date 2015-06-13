@@ -256,11 +256,8 @@ public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, A
         switch self {
         case Options(let opts): return opts
         case Composition(let c):
-            for i in c {
-                switch i {
-                case Options(let opts): return opts
-                default: continue
-                }
+            for case let Options(o) in c {
+                return o
             }
         default:
             break
