@@ -27,7 +27,7 @@ func View(text: String, color: UIColor = UIColor.redColor()) -> UIView {
 let x = View("x")
 let y = View("y")
 
-XCPShowView("yavfl", root)
+XCPShowView("yavfl", view: root)
 
 //: ### Sample 1
 visualFormat(x, y) { x, y in
