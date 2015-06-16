@@ -183,7 +183,7 @@ public class LayoutView : CustomStringConvertible {
 
     public var description: String {
         let v = view.description
-        if predicates.count == 0 {
+        if predicates.isEmpty {
             return v
         }
         let p = ",".join(predicates.map { $0.description })
@@ -191,16 +191,13 @@ public class LayoutView : CustomStringConvertible {
     }
 
     var relatedViews: [LayoutViewName] {
-        var v = [view]
-        for i in predicates {
-            switch i.object {
-            case .View(let view):
-                v.append(view)
-            default:
-                break
+        return [view] + predicates.flatMap { e -> [LayoutViewName] in
+            if case let .View(v) = e.object {
+                return [v]
+            } else {
+                return []
             }
         }
-        return v
     }
 
     public init(_ elements: [ViewExpression]) {
