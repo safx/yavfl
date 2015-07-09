@@ -25,8 +25,8 @@ class ViewController: UIViewController {
         view.addSubview(textField)
         
         visualFormat(label, textField) { l, t in
-            .V ~ |-80-[l,==32]
-            .V ~ [t,==48]
+            .V ~ |-80-[l,==32];
+            .V ~ [t,==48];
             .H ~ |-20-[l,==t]-10-[t]-| % .AlignAllCenterY
         }
     }
