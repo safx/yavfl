@@ -118,16 +118,10 @@ public class LayoutViewName : CustomStringConvertible {
 
 // MARK: <predicate>
 
-public class LayoutPredicate : CustomStringConvertible {
+public struct LayoutPredicate : CustomStringConvertible {
     let relation: LayoutRelation
     let object: LayoutObjectOfPredicate
     let priority: Int?
-
-    public init(relation: LayoutRelation, object: LayoutObjectOfPredicate, priority: Int? = nil) {
-        self.relation = relation
-        self.object = object
-        self.priority = priority
-    }
 
     public var description: String {
         let d = relation.description + object.description
@@ -316,7 +310,7 @@ private func createVisualFormatPredicate(view: ViewExpression, priority: Int? = 
 private func createViewExpressionPredicate(view: ViewExpression, relation: LayoutRelation) -> ViewExpression {
     switch view {
     case .View(let v):
-        return .Predicate(LayoutPredicate(relation: relation, object: .View(v)))
+        return .Predicate(LayoutPredicate(relation: relation, object: .View(v), priority: nil))
     default:
         fatalError("Error")
     }
@@ -374,7 +368,7 @@ public func -(lhs: VisualFormat, rhs: (ViewExpression)) -> VisualFormat {
 prefix operator == {}
 
 public prefix func ==(n: Int) -> ViewExpression {
-    return .Predicate(LayoutPredicate(relation: .Equal, object: .Constant(n)))
+    return .Predicate(LayoutPredicate(relation: .Equal, object: .Constant(n), priority: nil))
 }
 
 public prefix func ==(view: ViewExpression) -> ViewExpression {
@@ -385,7 +379,7 @@ public prefix func ==(view: ViewExpression) -> ViewExpression {
 prefix operator <= {}
 
 public prefix func <=(n: Int) -> ViewExpression {
-    return .Predicate(LayoutPredicate(relation: .LessThanOrEqual, object: .Constant(n)))
+    return .Predicate(LayoutPredicate(relation: .LessThanOrEqual, object: .Constant(n), priority: nil))
 }
 
 public prefix func <=(view: ViewExpression) -> ViewExpression {
@@ -396,7 +390,7 @@ public prefix func <=(view: ViewExpression) -> ViewExpression {
 prefix operator >= {}
 
 public prefix func >=(n: Int) -> ViewExpression {
-    return .Predicate(LayoutPredicate(relation: .GreaterThanOrEqual, object: .Constant(n)))
+    return .Predicate(LayoutPredicate(relation: .GreaterThanOrEqual, object: .Constant(n), priority: nil))
 }
 
 public prefix func >=(view: ViewExpression) -> ViewExpression {
