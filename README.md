@@ -15,11 +15,13 @@ In yavfl, you can write the code of visual format language as follows:
 
 ```swift
 visualFormat(label, textField) { l, t in
-    .V ~ |-40-[l,==32]
-    .V ~ |-40-[t,==32]
+    .V ~ |-40-[l,==32];
+    .V ~ |-40-[t,==32];
     .H ~ |-20-[l,==t]-10-[t]-|
 }
 ```
+
+(`;` is needed since Xcode 7 beta 3)
 
 ![](./images/layout_sample.png)
 
