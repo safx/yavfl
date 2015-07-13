@@ -124,7 +124,7 @@ public struct LayoutPredicate : CustomStringConvertible {
     let priority: Int?
 
     public var description: String {
-        let d = relation.description + object.description
+        let d = relation.rawValue + object.description
         if let p = priority {
             return d + "@\(p)"
         }
@@ -134,14 +134,10 @@ public struct LayoutPredicate : CustomStringConvertible {
 
 // MARK: <relation>
 
-public enum LayoutRelation : String, CustomStringConvertible {
+public enum LayoutRelation : String {
     case Equal = "=="
     case GreaterThanOrEqual = ">="
     case LessThanOrEqual = "<="
-
-    public var description: String {
-        return rawValue
-    }
 }
 
 // MARK: <objectOfPredicate>
@@ -160,13 +156,9 @@ public enum LayoutObjectOfPredicate : CustomStringConvertible {
 
 // MARK: <orientation>
 
-public enum LayoutOrientation : String, CustomStringConvertible {
+public enum LayoutOrientation : String {
     case V = "V"
     case H = "H"
-
-    public var description: String {
-        return rawValue
-    }
 }
 
 // MARK: <view>
@@ -417,12 +409,8 @@ public func ~(lhs: ViewExpression, rhs: Int) -> ViewExpression {
 }
 
 public func ~(lhs: LayoutOrientation, rhs: VisualFormat) -> [AnyObject] {
-    let exp = lhs.description + ":" + rhs.description
-    let dic = rhs.viewsDictionary
-    let opts = rhs.options
-    //println("\(exp)")
-
-    let c = NSLayoutConstraint.constraintsWithVisualFormat(exp, options: opts, metrics: nil, views: dic)
+    let exp = lhs.rawValue + ":" + rhs.description
+    let c = NSLayoutConstraint.constraintsWithVisualFormat(exp, options: rhs.options, metrics: nil, views: rhs.viewsDictionary)
     NSLayoutConstraint.activateConstraints(c)
     return c
 }

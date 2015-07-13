@@ -31,8 +31,8 @@ XCPShowView("yavfl", view: root)
 
 //: ### Sample 1
 visualFormat(x, y) { x, y in
-    .V ~ |-20-[x,==80]
-    .V ~ [y,==50]
+    .V ~ |-20-[x,==80];
+    .V ~ [y,==50];
     .H ~ |-20-[x,==y]-10-[y]-20-| % .AlignAllCenterY
 }
 
