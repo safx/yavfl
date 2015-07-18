@@ -31,9 +31,9 @@ class yavflTests: XCTestCase {
     }
 
     func testVisualFormat() {
-        let x : ViewExpression = .View(LayoutViewName(UIView(), 1))
-        let y : ViewExpression = .View(LayoutViewName(UIView(), 2))
-        let z : ViewExpression = .View(LayoutViewName(UIView(), 3))
+        let x : ViewExpression = .View(LayoutViewName(view: UIView(), index: 1))
+        let y : ViewExpression = .View(LayoutViewName(view: UIView(), index: 2))
+        let z : ViewExpression = .View(LayoutViewName(view: UIView(), index: 3))
 
         XCTAssertEqual(vf(|[x]|)              , "|[v1]|")
         XCTAssertEqual(vf(|-[x]|)             , "|-[v1]|")
@@ -60,9 +60,9 @@ class yavflTests: XCTestCase {
         let x_ = UIView()
         let y_ = UIView()
         let z_ = UIView()
-        let xn = LayoutViewName(x_, 1)
-        let yn = LayoutViewName(y_, 2)
-        let zn = LayoutViewName(z_, 3)
+        let xn = LayoutViewName(view: x_, index: 1)
+        let yn = LayoutViewName(view: y_, index: 2)
+        let zn = LayoutViewName(view: z_, index: 3)
 
         visualFormat(x_, y_, z_) { x, y, z in
             XCTAssertEqual(rv(|[x]|)              , [xn])
@@ -88,7 +88,7 @@ class yavflTests: XCTestCase {
     }
 
     func testOptions() {
-        let x : ViewExpression = .View(LayoutViewName(UIView(), 1))
+        let x : ViewExpression = .View(LayoutViewName(view: UIView(), index: 1))
 
         XCTAssertEqual(opt(|[x]|)                   , NSLayoutFormatOptions())
         XCTAssertEqual(opt(|[x]| % .AlignAllCenterY), NSLayoutFormatOptions.AlignAllCenterY)

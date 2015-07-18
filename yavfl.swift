@@ -22,7 +22,7 @@ public func visualFormat(v1: YAVView,
                          @noescape closure: (ViewExpression) -> ()) {
     v1.translatesAutoresizingMaskIntoConstraints = false
 
-    closure(.View(LayoutViewName(v1, 1)))
+    closure(.View(LayoutViewName(view: v1, index: 1)))
 
     v1.updateConstraints()
 }
@@ -32,8 +32,8 @@ public func visualFormat(v1: YAVView, _ v2: YAVView,
     v1.translatesAutoresizingMaskIntoConstraints = false
     v2.translatesAutoresizingMaskIntoConstraints = false
 
-    closure(.View(LayoutViewName(v1, 1)),
-            .View(LayoutViewName(v2, 2)))
+    closure(.View(LayoutViewName(view: v1, index: 1)),
+            .View(LayoutViewName(view: v2, index: 2)))
 
     v1.updateConstraints()
     v2.updateConstraints()
@@ -45,9 +45,9 @@ public func visualFormat(v1: YAVView, _ v2: YAVView, _ v3: YAVView,
     v2.translatesAutoresizingMaskIntoConstraints = false
     v3.translatesAutoresizingMaskIntoConstraints = false
 
-    closure(.View(LayoutViewName(v1, 1)),
-            .View(LayoutViewName(v2, 2)),
-            .View(LayoutViewName(v3, 3)))
+    closure(.View(LayoutViewName(view: v1, index: 1)),
+            .View(LayoutViewName(view: v2, index: 2)),
+            .View(LayoutViewName(view: v3, index: 3)))
 
     v1.updateConstraints()
     v2.updateConstraints()
@@ -61,10 +61,10 @@ public func visualFormat(v1: YAVView, _ v2: YAVView, _ v3: YAVView, _ v4: YAVVie
     v3.translatesAutoresizingMaskIntoConstraints = false
     v4.translatesAutoresizingMaskIntoConstraints = false
 
-    closure(.View(LayoutViewName(v1, 1)),
-            .View(LayoutViewName(v2, 2)),
-            .View(LayoutViewName(v3, 3)),
-            .View(LayoutViewName(v4, 4)))
+    closure(.View(LayoutViewName(view: v1, index: 1)),
+            .View(LayoutViewName(view: v2, index: 2)),
+            .View(LayoutViewName(view: v3, index: 3)),
+            .View(LayoutViewName(view: v4, index: 4)))
 
     v1.updateConstraints()
     v2.updateConstraints()
@@ -80,11 +80,11 @@ public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView, v4: YAVView, v5:
     v4.translatesAutoresizingMaskIntoConstraints = false
     v5.translatesAutoresizingMaskIntoConstraints = false
 
-    closure(.View(LayoutViewName(v1, 1)),
-            .View(LayoutViewName(v2, 2)),
-            .View(LayoutViewName(v3, 3)),
-            .View(LayoutViewName(v4, 4)),
-            .View(LayoutViewName(v5, 5)))
+    closure(.View(LayoutViewName(view: v1, index: 1)),
+            .View(LayoutViewName(view: v2, index: 2)),
+            .View(LayoutViewName(view: v3, index: 3)),
+            .View(LayoutViewName(view: v4, index: 4)),
+            .View(LayoutViewName(view: v5, index: 5)))
 
     v1.updateConstraints()
     v2.updateConstraints()
@@ -102,17 +102,12 @@ public enum ViewExpression {
 
 // MARK: <viewName>
 
-public class LayoutViewName : CustomStringConvertible {
+public struct LayoutViewName : CustomStringConvertible {
     let view: YAVView
     let index: Int
 
     public var description: String {
         return "v\(index)"
-    }
-
-    init(_ view: YAVView, _ index: Int) {
-        self.view = view
-        self.index = index
     }
 }
 
@@ -149,7 +144,7 @@ public enum LayoutObjectOfPredicate : CustomStringConvertible {
     public var description: String {
         switch self {
         case Constant(let n): return "\(n)"
-        case View(let view): return view.description
+        case View(let view):  return view.description
         }
     }
 }
@@ -163,7 +158,7 @@ public enum LayoutOrientation : String {
 
 // MARK: <view>
 
-public class LayoutView : CustomStringConvertible {
+public struct LayoutView : CustomStringConvertible {
     let view: LayoutViewName
     let predicates: [LayoutPredicate]
 
@@ -194,18 +189,14 @@ public class LayoutView : CustomStringConvertible {
         let pred_part = elements[1..<len]
 
         switch view_part {
-        case .View(let v):
-            self.view = v
-        default:
-            fatalError("Error")
+        case .View(let v): self.view = v
+        default:           fatalError("Error")
         }
 
         self.predicates = pred_part.map { e in
             switch e {
-            case .Predicate(let p):
-                return p
-            default:
-                fatalError("Error")
+            case .Predicate(let p): return p
+            default:                fatalError("Error")
             }
         }
     }
@@ -250,12 +241,9 @@ public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, A
 
     var relatedViews: [LayoutViewName] {
         switch self {
-        case View(let v):
-            return v.relatedViews
-        case Composition(let c):
-            return c.flatMap { $0.relatedViews }
-        default:
-            return []
+        case View(let v):        return v.relatedViews
+        case Composition(let c): return c.flatMap { $0.relatedViews }
+        default:                 return []
         }
     }
 
@@ -278,10 +266,8 @@ public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, A
     public init(composition elements: VisualFormat...) {
         let t = elements.flatMap { e -> [VisualFormat] in
             switch e {
-            case Composition(let c):
-                return c
-            default:
-                return [e]
+            case Composition(let c): return c
+            default:                 return [e]
             }
         }
         self = .Composition(t)
