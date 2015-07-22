@@ -103,8 +103,8 @@ public enum ViewExpression {
 // MARK: <viewName>
 
 public struct LayoutViewName : CustomStringConvertible {
-    let view: YAVView
-    let index: Int
+    internal let view: YAVView
+    internal let index: Int
 
     public var description: String {
         return "v\(index)"
@@ -114,9 +114,9 @@ public struct LayoutViewName : CustomStringConvertible {
 // MARK: <predicate>
 
 public struct LayoutPredicate : CustomStringConvertible {
-    let relation: LayoutRelation
-    let object: LayoutObjectOfPredicate
-    let priority: Int?
+    private let relation: LayoutRelation
+    private let object: LayoutObjectOfPredicate
+    private let priority: Int?
 
     public var description: String {
         let d = relation.rawValue + object.description
@@ -152,15 +152,15 @@ public enum LayoutObjectOfPredicate : CustomStringConvertible {
 // MARK: <orientation>
 
 public enum LayoutOrientation : String {
-    case V = "V"
-    case H = "H"
+    case V
+    case H
 }
 
 // MARK: <view>
 
 public struct LayoutView : CustomStringConvertible {
-    let view: LayoutViewName
-    let predicates: [LayoutPredicate]
+    private let view: LayoutViewName
+    private let predicates: [LayoutPredicate]
 
     public var description: String {
         let v = view.description
@@ -171,7 +171,7 @@ public struct LayoutView : CustomStringConvertible {
         return v + "(" + p + ")"
     }
 
-    var relatedViews: [LayoutViewName] {
+    private var relatedViews: [LayoutViewName] {
         return [view] + predicates.flatMap { e -> [LayoutViewName] in
             if case let .View(v) = e.object {
                 return [v]
@@ -189,11 +189,11 @@ public struct LayoutView : CustomStringConvertible {
         let pred_part = elements[1..<len]
 
         switch view_part {
-        case .View(let v): self.view = v
+        case .View(let v): view = v
         default:           fatalError("Error")
         }
 
-        self.predicates = pred_part.map { e in
+        predicates = pred_part.map { e in
             switch e {
             case .Predicate(let p): return p
             default:                fatalError("Error")
@@ -219,14 +219,14 @@ public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, A
         case View(let v):        return "[" + v.description + "]"
         case Connection:         return "-"
         case Predicate(let p):   return "(" + p.description + ")"
-        case Number(let n):      return "\(n)"
+        case Number(let n):      return String(n)
         case Composition(let c): return "".join(c.map { $0.description })
         case Options:            return ""
         }
     }
 
     // FIXME: report error for multiple options
-    var options: NSLayoutFormatOptions {
+    internal var options: NSLayoutFormatOptions {
         switch self {
         case Options(let opts): return opts
         case Composition(let c):
@@ -239,7 +239,7 @@ public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, A
         return NSLayoutFormatOptions()
     }
 
-    var relatedViews: [LayoutViewName] {
+    internal var relatedViews: [LayoutViewName] {
         switch self {
         case View(let v):        return v.relatedViews
         case Composition(let c): return c.flatMap { $0.relatedViews }
@@ -247,7 +247,7 @@ public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, A
         }
     }
 
-    var viewsDictionary: [String:AnyObject] {
+    private var viewsDictionary: [String:AnyObject] {
         var d = [String:AnyObject]()
         for v in relatedViews {
             d[v.description] = v.view
@@ -317,7 +317,7 @@ public prefix func |-(e: VisualFormat) -> VisualFormat {
 }
 
 public prefix func |-(e: (ViewExpression)) -> VisualFormat {
-    return VisualFormat(composition: .Superview, .Connection, createVisualFormatPredicate(e.0))
+    return VisualFormat(composition: .Superview, .Connection, createVisualFormatPredicate(e))
 }
 
 
@@ -328,7 +328,7 @@ public postfix func -|(e: VisualFormat) -> VisualFormat {
 }
 
 public postfix func -|(e: (ViewExpression)) -> VisualFormat {
-    return VisualFormat(composition: createVisualFormatPredicate(e.0), .Connection, .Superview)
+    return VisualFormat(composition: createVisualFormatPredicate(e), .Connection, .Superview)
 }
 
 
@@ -339,7 +339,7 @@ public func -(lhs: VisualFormat, rhs: VisualFormat) -> VisualFormat {
 }
 
 public func -(lhs: VisualFormat, rhs: (ViewExpression)) -> VisualFormat {
-    return VisualFormat(composition: lhs, .Connection, createVisualFormatPredicate(rhs.0))
+    return VisualFormat(composition: lhs, .Connection, createVisualFormatPredicate(rhs))
 }
 
 
