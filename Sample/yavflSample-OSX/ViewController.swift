@@ -11,11 +11,7 @@ import Cocoa
 class ViewController: NSViewController {
 
     override func viewDidLoad() {
-        if #available(OSX 10.10, *) {
-            super.viewDidLoad()
-        } else {
-            // Fallback on earlier versions
-        }
+        super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         let textField1 = NSTextField()
@@ -27,18 +23,10 @@ class ViewController: NSViewController {
         view.addSubview(textField2)
         
         visualFormat(textField1, textField2) { l, t in
-            .V ~ |-80-[l,==32]
-            .V ~ [t,==48]
+            .V ~ |-80-[l,==32];
+            .V ~ [t,==48];
             .H ~ |-20-[l,==t]-10-[t]-| % .AlignAllCenterY
         }
     }
-
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
 }
 
