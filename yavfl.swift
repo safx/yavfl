@@ -120,19 +120,17 @@ public struct LayoutPredicate : CustomStringConvertible {
 
     public var description: String {
         let d = relation.rawValue + object.description
-        if let p = priority {
-            return d + "@\(p)"
-        }
-        return d
+        guard let p = priority else { return d }
+        return "\(d)@\(p)"
     }
 }
 
 // MARK: <relation>
 
 public enum LayoutRelation : String {
-    case Equal = "=="
+    case Equal              = "=="
     case GreaterThanOrEqual = ">="
-    case LessThanOrEqual = "<="
+    case LessThanOrEqual    = "<="
 }
 
 // MARK: <objectOfPredicate>
@@ -143,7 +141,7 @@ public enum LayoutObjectOfPredicate : CustomStringConvertible {
 
     public var description: String {
         switch self {
-        case Constant(let n): return "\(n)"
+        case Constant(let n): return String(n)
         case View(let view):  return view.description
         }
     }
@@ -172,11 +170,10 @@ public struct LayoutView : CustomStringConvertible {
     }
 
     private var relatedViews: [LayoutViewName] {
-        return [view] + predicates.flatMap { e -> [LayoutViewName] in
-            if case let .View(v) = e.object {
-                return [v]
-            } else {
-                return []
+        return [view] + predicates.flatMap { e -> LayoutViewName? in
+            switch e.object {
+            case .View(let v): return v
+            default:           return nil
             }
         }
     }
@@ -194,10 +191,8 @@ public struct LayoutView : CustomStringConvertible {
         }
 
         predicates = pred_part.map { e in
-            switch e {
-            case .Predicate(let p): return p
-            default:                fatalError("Error")
-            }
+            if case let .Predicate(p) = e { return p }
+            fatalError("Error")
         }
     }
 }
@@ -230,9 +225,7 @@ public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, A
         switch self {
         case Options(let opts): return opts
         case Composition(let c):
-            for case let Options(o) in c {
-                return o
-            }
+            for case let Options(o) in c { return o }
         default:
             break
         }
@@ -277,21 +270,17 @@ public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, A
 // MARK: helper funcs
 
 private func createVisualFormatPredicate(view: ViewExpression, priority: Int? = nil) -> VisualFormat {
-    switch view {
-    case .Predicate(let p):
+    if case let .Predicate(p) = view {
         return .Predicate(LayoutPredicate(relation: p.relation, object: p.object, priority: priority))
-    default:
-        fatalError("Error")
     }
+    fatalError("Error")
 }
 
 private func createViewExpressionPredicate(view: ViewExpression, relation: LayoutRelation) -> ViewExpression {
-    switch view {
-    case .View(let v):
+    if case let .View(v) = view {
         return .Predicate(LayoutPredicate(relation: relation, object: .View(v), priority: nil))
-    default:
-        fatalError("Error")
     }
+    fatalError("Error")
 }
 
 // MARK: - operators
@@ -386,12 +375,10 @@ public func %(lhs: VisualFormat, rhs: NSLayoutFormatOptions) -> VisualFormat {
 infix operator ~ {}
 
 public func ~(lhs: ViewExpression, rhs: Int) -> ViewExpression {
-    switch lhs {
-    case .Predicate(let p):
+    if case let .Predicate(p) = lhs {
         return .Predicate(LayoutPredicate(relation: p.relation, object: p.object, priority: rhs))
-    default:
-        fatalError("Error")
     }
+    fatalError("Error")
 }
 
 public func ~(lhs: LayoutOrientation, rhs: VisualFormat) -> [AnyObject] {
