@@ -107,7 +107,7 @@ public struct LayoutViewName : CustomStringConvertible {
     internal let index: Int
 
     public var description: String {
-        return "v\(index)"
+        return "v" + String(index)
     }
 }
 
@@ -121,7 +121,7 @@ public struct LayoutPredicate : CustomStringConvertible {
     public var description: String {
         let d = relation.rawValue + object.description
         guard let p = priority else { return d }
-        return "\(d)@\(p)"
+        return d + "@" + String(p)
     }
 }
 
@@ -162,11 +162,8 @@ public struct LayoutView : CustomStringConvertible {
 
     public var description: String {
         let v = view.description
-        if predicates.isEmpty {
-            return v
-        }
-        let p = ",".join(predicates.map { $0.description })
-        return v + "(" + p + ")"
+        if predicates.isEmpty { return v }
+        return v + "(" + ",".join(predicates.map { $0.description }) + ")"
     }
 
     private var relatedViews: [LayoutViewName] {
@@ -178,17 +175,15 @@ public struct LayoutView : CustomStringConvertible {
         }
     }
 
-    public init(_ elements: [ViewExpression]) {
+    internal init(_ elements: [ViewExpression]) {
         assert(elements.count > 0)
 
         let len = elements.count
         let view_part = elements[0]
         let pred_part = elements[1..<len]
 
-        switch view_part {
-        case .View(let v): view = v
-        default:           fatalError("Error")
-        }
+        guard case let .View(v) = view_part else { fatalError("Error") }
+        view = v
 
         predicates = pred_part.map { e in
             if case let .Predicate(p) = e { return p }
@@ -256,7 +251,7 @@ public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, A
         self = .View(LayoutView(elements))
     }
 
-    public init(composition elements: VisualFormat...) {
+    internal init(composition elements: VisualFormat...) {
         let t = elements.flatMap { e -> [VisualFormat] in
             switch e {
             case Composition(let c): return c
