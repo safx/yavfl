@@ -163,7 +163,7 @@ public struct LayoutView : CustomStringConvertible {
     public var description: String {
         let v = view.description
         if predicates.isEmpty { return v }
-        return v + "(" + ",".join(predicates.map { $0.description }) + ")"
+        return v + "(" + predicates.map { $0.description } .joinWithSeparator(",") + ")"
     }
 
     private var relatedViews: [LayoutViewName] {
@@ -210,7 +210,7 @@ public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, A
         case Connection:         return "-"
         case Predicate(let p):   return "(" + p.description + ")"
         case Number(let n):      return String(n)
-        case Composition(let c): return "".join(c.map { $0.description })
+        case Composition(let c): return c.map { $0.description } .joinWithSeparator("")
         case Options:            return ""
         }
     }
