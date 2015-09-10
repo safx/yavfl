@@ -221,8 +221,7 @@ public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, A
         case Options(let opts): return opts
         case Composition(let c):
             for case let Options(o) in c { return o }
-        default:
-            break
+        default: ()
         }
         return NSLayoutFormatOptions()
     }
