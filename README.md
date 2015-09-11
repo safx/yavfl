@@ -8,22 +8,23 @@
 
 yavfl is Yet Anoter Visual Format Language for Auto Layout.
 
-
 ## Usage
 
 In yavfl, you can write the code of visual format language as follows:
 
 ```swift
 visualFormat(label, textField) { l, t in
-    .V ~ |-40-[l,==32]
-    .V ~ |-40-[t,==32]
+    .V ~ |-40-[l,==32];
+    .V ~ |-40-[t,==32];
     .H ~ |-20-[l,==t]-10-[t]-|
 }
 ```
 
+* Trailing `;`s are needed since Xcode 7 beta 3 when you will write multiple statements in a block.
+
 ![](./images/layout_sample.png)
 
-The equivallent code of the original visual format is follows:
+The following code is the equivallent code of the original visual format:
 
 ```swift
 let dic = ["l": label, "t": textField]
@@ -36,6 +37,8 @@ self.view.addConstraints(c1)
 self.view.addConstraints(c2)
 self.view.addConstraints(c3)
 ```
+
+If you aren't familiar with Visual Format Language, please visit [the original Visual Format Language page](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage/VisualFormatLanguage.html) first.
 
 ## More Examples
 
@@ -56,7 +59,7 @@ self.view.addConstraints(c3)
 
 * Yavfl does not check syntatic validity. You don't expect the code is valid even if its compilation succeeded.
 * *Connection*'s *predicateList* supports only one *predicate*.
-* `visualFormat` supports up to 5 views.
+* function `visualFormat` supports up to 5 views.
 
 ## Differences from the Original Visual Format Language
 

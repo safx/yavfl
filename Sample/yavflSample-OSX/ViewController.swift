@@ -23,18 +23,10 @@ class ViewController: NSViewController {
         view.addSubview(textField2)
         
         visualFormat(textField1, textField2) { l, t in
-            .V ~ |-80-[l,==32]
-            .V ~ [t,==48]
+            .V ~ |-80-[l,==32];
+            .V ~ [t,==48];
             .H ~ |-20-[l,==t]-10-[t]-| % .AlignAllCenterY
         }
     }
-
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
 }
 
