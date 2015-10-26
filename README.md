@@ -1,6 +1,7 @@
 #yavfl
 
 [![TravisCI](http://img.shields.io/travis/safx/yavfl.svg?style=flat)](https://travis-ci.org/safx/yavfl)
+[![codecov.io](http://codecov.io/github/safx/yavfl/coverage.svg?branch=master)](http://codecov.io/github/safx/yavfl?branch=master)
 ![Platform](https://img.shields.io/cocoapods/p/yavfl.svg?style=flat)
 ![License](https://img.shields.io/cocoapods/l/yavfl.svg?style=flat)
 ![Version](https://img.shields.io/cocoapods/v/yavfl.svg?style=flat)
