@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
   s.source_files = "yavfl.swift"
   s.framework    = 'Foundation'
   s.ios.deployment_target = "8.0"
+  s.tvos.deployment_target = "9.0"
   s.osx.deployment_target = "10.10"
   s.requires_arc = true
 end
