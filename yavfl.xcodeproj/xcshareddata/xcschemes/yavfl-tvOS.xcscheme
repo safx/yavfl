@@ -15,8 +15,22 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8DEC2B441BFB57D00083EC9D"
-               BuildableName = "yavfl-tvOS.framework"
+               BuildableName = "yavfl.framework"
                BlueprintName = "yavfl-tvOS"
+               ReferencedContainer = "container:yavfl.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8DEC2B551BFB594F0083EC9D"
+               BuildableName = "yavflTests-tvOS.xctest"
+               BlueprintName = "yavflTests-tvOS"
                ReferencedContainer = "container:yavfl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,7 +58,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8DEC2B441BFB57D00083EC9D"
-            BuildableName = "yavfl-tvOS.framework"
+            BuildableName = "yavfl.framework"
             BlueprintName = "yavfl-tvOS"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
@@ -66,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8DEC2B441BFB57D00083EC9D"
-            BuildableName = "yavfl-tvOS.framework"
+            BuildableName = "yavfl.framework"
             BlueprintName = "yavfl-tvOS"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
@@ -84,7 +98,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8DEC2B441BFB57D00083EC9D"
-            BuildableName = "yavfl-tvOS.framework"
+            BuildableName = "yavfl.framework"
             BlueprintName = "yavfl-tvOS"
             ReferencedContainer = "container:yavfl.xcodeproj">
          </BuildableReference>
