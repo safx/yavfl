@@ -176,18 +176,15 @@ public struct LayoutView : CustomStringConvertible {
     }
 
     internal init(_ elements: [ViewExpression]) {
-        assert(elements.count > 0)
-
-        let len = elements.count
-        let view_part = elements[0]
-        let pred_part = elements[1..<len]
-
-        guard case let .View(v) = view_part else { fatalError("Error") }
+        guard let view_part = elements.first, case let .View(v) = view_part else {
+            fatalError("View expected")
+        }
         view = v
 
+        let pred_part = elements.suffixFrom(1)
         predicates = pred_part.map { e in
             if case let .Predicate(p) = e { return p }
-            fatalError("Error")
+            fatalError("Predicate expected")
         }
     }
 }
@@ -236,9 +233,7 @@ public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, A
 
     private var viewsDictionary: [String:AnyObject] {
         var d = [String:AnyObject]()
-        for v in relatedViews {
-            d[v.description] = v.view
-        }
+        relatedViews.forEach { d[$0.description] = $0.view }
         return d
     }
 
