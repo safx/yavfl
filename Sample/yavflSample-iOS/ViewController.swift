@@ -18,16 +18,16 @@ class ViewController: UIViewController {
         let textField = UITextField()
         
         label.text = "Label"
-        label.backgroundColor = UIColor.grayColor()
+        label.backgroundColor = UIColor.gray
         textField.placeholder = "Input some text"
-        textField.borderStyle = .Line
+        textField.borderStyle = .line
         view.addSubview(label)
         view.addSubview(textField)
         
         visualFormat(label, textField) { l, t in
-            .V ~ |-80-[l,==32];
-            .V ~ [t,==48];
-            .H ~ |-20-[l,==t]-10-[t]-| % .AlignAllCenterY
+            .v ~ |-80-[l,==32];
+            .v ~ [t,==48];
+            .h ~ |-20-[l,==t]-10-[t]-| % .alignAllCenterY
         }
     }
 

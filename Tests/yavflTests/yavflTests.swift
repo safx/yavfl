@@ -18,22 +18,22 @@ public func == (lhs: LayoutViewName, rhs: LayoutViewName) -> Bool {
 
 class yavflTests: XCTestCase {
 
-    func vf(vf: VisualFormat) -> String {
+    func vf(_ vf: VisualFormat) -> String {
         return vf.description
     }
 
-    func opt(vf: VisualFormat) -> NSLayoutFormatOptions {
+    func opt(_ vf: VisualFormat) -> NSLayoutFormatOptions {
         return vf.options
     }
 
-    func rv(vf: VisualFormat) -> [LayoutViewName] {
+    func rv(_ vf: VisualFormat) -> [LayoutViewName] {
         return vf.relatedViews
     }
 
     func testVisualFormat() {
-        let x : ViewExpression = .View(LayoutViewName(view: UIView(), index: 1))
-        let y : ViewExpression = .View(LayoutViewName(view: UIView(), index: 2))
-        let z : ViewExpression = .View(LayoutViewName(view: UIView(), index: 3))
+        let x : ViewExpression = .view(LayoutViewName(view: UIView(), index: 1))
+        let y : ViewExpression = .view(LayoutViewName(view: UIView(), index: 2))
+        let z : ViewExpression = .view(LayoutViewName(view: UIView(), index: 3))
 
         XCTAssertEqual(vf(|[x]|)              , "|[v1]|")
         XCTAssertEqual(vf(|-[x]|)             , "|-[v1]|")
@@ -88,10 +88,10 @@ class yavflTests: XCTestCase {
     }
 
     func testOptions() {
-        let x : ViewExpression = .View(LayoutViewName(view: UIView(), index: 1))
+        let x : ViewExpression = .view(LayoutViewName(view: UIView(), index: 1))
 
         XCTAssertEqual(opt(|[x]|)                   , NSLayoutFormatOptions())
-        XCTAssertEqual(opt(|[x]| % .AlignAllCenterY), NSLayoutFormatOptions.AlignAllCenterY)
+        XCTAssertEqual(opt(|[x]| % .alignAllCenterY), NSLayoutFormatOptions.alignAllCenterY)
     }
 
     func testCapture() {
@@ -101,13 +101,13 @@ class yavflTests: XCTestCase {
 
         var q1: [AnyObject]?
         visualFormat(v) { v in
-            q1 = .H ~ |-[v]
+            q1 = .h ~ |-[v]
         }
         XCTAssertEqual((q1!).count, 1)
 
         var q2: [AnyObject]?
         visualFormat(v) { v in
-            q2 = .H ~ |-[v]-|
+            q2 = .h ~ |-[v]-|
         }
         XCTAssertEqual((q2!).count, 2)
     }

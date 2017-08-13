@@ -13,58 +13,60 @@ import Foundation
 #if os(iOS) || os(tvOS)
     import UIKit
     public typealias YAVView = UIView
+    public typealias LayoutFormatOptions = NSLayoutFormatOptions
 #else
     import AppKit
     public typealias YAVView = NSView
+    public typealias LayoutFormatOptions = NSLayoutConstraint.FormatOptions
 #endif
 
-public func visualFormat(v1: YAVView,
-                         @noescape closure: (ViewExpression) -> ()) {
+public func visualFormat(_ v1: YAVView,
+                         closure: (ViewExpression) -> ()) {
     v1.translatesAutoresizingMaskIntoConstraints = false
 
-    closure(.View(LayoutViewName(view: v1, index: 1)))
+    closure(.view(LayoutViewName(view: v1, index: 1)))
 
     v1.updateConstraints()
 }
 
-public func visualFormat(v1: YAVView, _ v2: YAVView,
-                         @noescape closure: (ViewExpression, ViewExpression) -> ()) {
+public func visualFormat(_ v1: YAVView, _ v2: YAVView,
+                         closure: (ViewExpression, ViewExpression) -> ()) {
     v1.translatesAutoresizingMaskIntoConstraints = false
     v2.translatesAutoresizingMaskIntoConstraints = false
 
-    closure(.View(LayoutViewName(view: v1, index: 1)),
-            .View(LayoutViewName(view: v2, index: 2)))
+    closure(.view(LayoutViewName(view: v1, index: 1)),
+            .view(LayoutViewName(view: v2, index: 2)))
 
     v1.updateConstraints()
     v2.updateConstraints()
 }
 
-public func visualFormat(v1: YAVView, _ v2: YAVView, _ v3: YAVView,
-                         @noescape closure: (ViewExpression, ViewExpression, ViewExpression) -> ()) {
+public func visualFormat(_ v1: YAVView, _ v2: YAVView, _ v3: YAVView,
+                         closure: (ViewExpression, ViewExpression, ViewExpression) -> ()) {
     v1.translatesAutoresizingMaskIntoConstraints = false
     v2.translatesAutoresizingMaskIntoConstraints = false
     v3.translatesAutoresizingMaskIntoConstraints = false
 
-    closure(.View(LayoutViewName(view: v1, index: 1)),
-            .View(LayoutViewName(view: v2, index: 2)),
-            .View(LayoutViewName(view: v3, index: 3)))
+    closure(.view(LayoutViewName(view: v1, index: 1)),
+            .view(LayoutViewName(view: v2, index: 2)),
+            .view(LayoutViewName(view: v3, index: 3)))
 
     v1.updateConstraints()
     v2.updateConstraints()
     v3.updateConstraints()
 }
 
-public func visualFormat(v1: YAVView, _ v2: YAVView, _ v3: YAVView, _ v4: YAVView,
-                         @noescape closure: (ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
+public func visualFormat(_ v1: YAVView, _ v2: YAVView, _ v3: YAVView, _ v4: YAVView,
+                         closure: (ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
     v1.translatesAutoresizingMaskIntoConstraints = false
     v2.translatesAutoresizingMaskIntoConstraints = false
     v3.translatesAutoresizingMaskIntoConstraints = false
     v4.translatesAutoresizingMaskIntoConstraints = false
 
-    closure(.View(LayoutViewName(view: v1, index: 1)),
-            .View(LayoutViewName(view: v2, index: 2)),
-            .View(LayoutViewName(view: v3, index: 3)),
-            .View(LayoutViewName(view: v4, index: 4)))
+    closure(.view(LayoutViewName(view: v1, index: 1)),
+            .view(LayoutViewName(view: v2, index: 2)),
+            .view(LayoutViewName(view: v3, index: 3)),
+            .view(LayoutViewName(view: v4, index: 4)))
 
     v1.updateConstraints()
     v2.updateConstraints()
@@ -72,19 +74,19 @@ public func visualFormat(v1: YAVView, _ v2: YAVView, _ v3: YAVView, _ v4: YAVVie
     v4.updateConstraints()
 }
 
-public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView, v4: YAVView, v5: YAVView,
-                         @noescape closure: (ViewExpression, ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
+public func visualFormat(_ v1: YAVView, _ v2: YAVView, _ v3: YAVView, _ v4: YAVView, _ v5: YAVView,
+                         closure: (ViewExpression, ViewExpression, ViewExpression, ViewExpression, ViewExpression) -> ()) {
     v1.translatesAutoresizingMaskIntoConstraints = false
     v2.translatesAutoresizingMaskIntoConstraints = false
     v3.translatesAutoresizingMaskIntoConstraints = false
     v4.translatesAutoresizingMaskIntoConstraints = false
     v5.translatesAutoresizingMaskIntoConstraints = false
 
-    closure(.View(LayoutViewName(view: v1, index: 1)),
-            .View(LayoutViewName(view: v2, index: 2)),
-            .View(LayoutViewName(view: v3, index: 3)),
-            .View(LayoutViewName(view: v4, index: 4)),
-            .View(LayoutViewName(view: v5, index: 5)))
+    closure(.view(LayoutViewName(view: v1, index: 1)),
+            .view(LayoutViewName(view: v2, index: 2)),
+            .view(LayoutViewName(view: v3, index: 3)),
+            .view(LayoutViewName(view: v4, index: 4)),
+            .view(LayoutViewName(view: v5, index: 5)))
 
     v1.updateConstraints()
     v2.updateConstraints()
@@ -96,8 +98,8 @@ public func visualFormat(v1: YAVView, v2: YAVView, v3: YAVView, v4: YAVView, v5:
 // MARK:
 
 public enum ViewExpression {
-    case View(LayoutViewName)
-    case Predicate(LayoutPredicate)
+    case view(LayoutViewName)
+    case predicate(LayoutPredicate)
 }
 
 // MARK: <viewName>
@@ -114,9 +116,9 @@ public struct LayoutViewName : CustomStringConvertible {
 // MARK: <predicate>
 
 public struct LayoutPredicate : CustomStringConvertible {
-    private let relation: LayoutRelation
-    private let object: LayoutObjectOfPredicate
-    private let priority: Int?
+    fileprivate let relation: LayoutRelation
+    fileprivate let object: LayoutObjectOfPredicate
+    fileprivate let priority: Int?
 
     public var description: String {
         let d = relation.rawValue + object.description
@@ -128,21 +130,21 @@ public struct LayoutPredicate : CustomStringConvertible {
 // MARK: <relation>
 
 public enum LayoutRelation : String {
-    case Equal              = "=="
-    case GreaterThanOrEqual = ">="
-    case LessThanOrEqual    = "<="
+    case equal              = "=="
+    case greaterThanOrEqual = ">="
+    case lessThanOrEqual    = "<="
 }
 
 // MARK: <objectOfPredicate>
 
 public enum LayoutObjectOfPredicate : CustomStringConvertible {
-    case Constant(Int)
-    case View(LayoutViewName)
+    case constant(Int)
+    case view(LayoutViewName)
 
     public var description: String {
         switch self {
-        case Constant(let n): return String(n)
-        case View(let view):  return view.description
+        case .constant(let n): return String(n)
+        case .view(let view):  return view.description
         }
     }
 }
@@ -150,40 +152,40 @@ public enum LayoutObjectOfPredicate : CustomStringConvertible {
 // MARK: <orientation>
 
 public enum LayoutOrientation : String {
-    case V
-    case H
+    case v = "V"
+    case h = "H"
 }
 
 // MARK: <view>
 
 public struct LayoutView : CustomStringConvertible {
-    private let view: LayoutViewName
-    private let predicates: [LayoutPredicate]
+    fileprivate let view: LayoutViewName
+    fileprivate let predicates: [LayoutPredicate]
 
     public var description: String {
         let v = view.description
         if predicates.isEmpty { return v }
-        return v + "(" + predicates.map { $0.description } .joinWithSeparator(",") + ")"
+        return v + "(" + predicates.map { $0.description } .joined(separator: ",") + ")"
     }
 
-    private var relatedViews: [LayoutViewName] {
+    internal var relatedViews: [LayoutViewName] {
         return [view] + predicates.flatMap { e -> LayoutViewName? in
             switch e.object {
-            case .View(let v): return v
+            case .view(let v): return v
             default:           return nil
             }
         }
     }
 
-    internal init(_ elements: [ViewExpression]) {
-        guard let view_part = elements.first, case let .View(v) = view_part else {
+    fileprivate init(_ elements: [ViewExpression]) {
+        guard let view_part = elements.first, case let .view(v) = view_part else {
             fatalError("View expected")
         }
         view = v
 
-        let pred_part = elements.suffixFrom(1)
+        let pred_part = elements.dropFirst()
         predicates = pred_part.map { e in
-            if case let .Predicate(p) = e { return p }
+            if case let .predicate(p) = e { return p }
             fatalError("Predicate expected")
         }
     }
@@ -191,188 +193,189 @@ public struct LayoutView : CustomStringConvertible {
 
 // MARK: <visualFormatString>
 
-public enum VisualFormat : CustomStringConvertible, IntegerLiteralConvertible, ArrayLiteralConvertible {
-    case Superview
-    case View(LayoutView)
-    case Connection
-    case Predicate(LayoutPredicate)
-    case Number(Int)
-    case Composition([VisualFormat])
-    case Options(NSLayoutFormatOptions)
+public enum VisualFormat : CustomStringConvertible, ExpressibleByIntegerLiteral, ExpressibleByArrayLiteral {
+    case superview
+    case view(LayoutView)
+    case connection
+    case predicate(LayoutPredicate)
+    case number(Int)
+    case composition([VisualFormat])
+    case options(LayoutFormatOptions)
 
     public var description: String {
         switch self {
-        case Superview:          return "|"
-        case View(let v):        return "[" + v.description + "]"
-        case Connection:         return "-"
-        case Predicate(let p):   return "(" + p.description + ")"
-        case Number(let n):      return String(n)
-        case Composition(let c): return c.map { $0.description } .joinWithSeparator("")
-        case Options:            return ""
+        case .superview:          return "|"
+        case .view(let v):        return "[" + v.description + "]"
+        case .connection:         return "-"
+        case .predicate(let p):   return "(" + p.description + ")"
+        case .number(let n):      return String(n)
+        case .composition(let c): return c.map { $0.description } .joined(separator: "")
+        case .options:            return ""
         }
     }
 
     // FIXME: report error for multiple options
-    internal var options: NSLayoutFormatOptions {
+    internal var options: LayoutFormatOptions {
         switch self {
-        case Options(let opts): return opts
-        case Composition(let c):
-            for case let Options(o) in c { return o }
+        case .options(let opts): return opts
+        case .composition(let c):
+            for case let .options(o) in c { return o }
         default: ()
         }
-        return NSLayoutFormatOptions()
+        return LayoutFormatOptions()
     }
 
     internal var relatedViews: [LayoutViewName] {
         switch self {
-        case View(let v):        return v.relatedViews
-        case Composition(let c): return c.flatMap { $0.relatedViews }
+        case .view(let v):        return v.relatedViews
+        case .composition(let c): return c.flatMap { $0.relatedViews }
         default:                 return []
         }
     }
 
-    private var viewsDictionary: [String:AnyObject] {
+    internal var viewsDictionary: [String:AnyObject] {
         var d = [String:AnyObject]()
         relatedViews.forEach { d[$0.description] = $0.view }
         return d
     }
 
     public init(integerLiteral value: IntegerLiteralType) {
-        self = .Number(value)
+        self = .number(value)
     }
 
     public init(arrayLiteral elements: ViewExpression...) {
-        self = .View(LayoutView(elements))
+        self = .view(LayoutView(elements))
     }
 
-    internal init(composition elements: VisualFormat...) {
+    fileprivate init(composition elements: VisualFormat...) {
         let t = elements.flatMap { e -> [VisualFormat] in
             switch e {
-            case Composition(let c): return c
+            case .composition(let c): return c
             default:                 return [e]
             }
         }
-        self = .Composition(t)
+        self = .composition(t)
     }
 }
 
 // MARK: helper funcs
 
 private func createVisualFormatPredicate(view: ViewExpression, priority: Int? = nil) -> VisualFormat {
-    if case let .Predicate(p) = view {
-        return .Predicate(LayoutPredicate(relation: p.relation, object: p.object, priority: priority))
+    if case let .predicate(p) = view {
+        return .predicate(LayoutPredicate(relation: p.relation, object: p.object, priority: priority))
     }
     fatalError("Error")
 }
 
 private func createViewExpressionPredicate(view: ViewExpression, relation: LayoutRelation) -> ViewExpression {
-    if case let .View(v) = view {
-        return .Predicate(LayoutPredicate(relation: relation, object: .View(v), priority: nil))
+    if case let .view(v) = view {
+        return .predicate(LayoutPredicate(relation: relation, object: .view(v), priority: nil))
     }
     fatalError("Error")
 }
 
 // MARK: - operators
 
-prefix operator | {}
+prefix operator |
 
 public prefix func |(e: VisualFormat) -> VisualFormat {
-    return VisualFormat(composition: .Superview, e)
+    return VisualFormat(composition: .superview, e)
 }
 
 
-postfix operator | {}
+postfix operator |
 
 public postfix func |(e: VisualFormat) -> VisualFormat {
-    return VisualFormat(composition: e, .Superview)
+    return VisualFormat(composition: e, .superview)
 }
 
 
-prefix operator |- {}
+prefix operator |-
 
 public prefix func |-(e: VisualFormat) -> VisualFormat {
-    return VisualFormat(composition: .Superview, .Connection, e)
+    return VisualFormat(composition: .superview, .connection, e)
 }
 
 public prefix func |-(e: (ViewExpression)) -> VisualFormat {
-    return VisualFormat(composition: .Superview, .Connection, createVisualFormatPredicate(e))
+    return VisualFormat(composition: .superview, .connection, createVisualFormatPredicate(view: e))
 }
 
 
-postfix operator -| {}
+postfix operator -|
 
 public postfix func -|(e: VisualFormat) -> VisualFormat {
-    return VisualFormat(composition: e, .Connection, .Superview)
+    return VisualFormat(composition: e, .connection, .superview)
 }
 
 public postfix func -|(e: (ViewExpression)) -> VisualFormat {
-    return VisualFormat(composition: createVisualFormatPredicate(e), .Connection, .Superview)
+    return VisualFormat(composition: createVisualFormatPredicate(view: e), .connection, .superview)
 }
 
-
-//infix operator - {}
+//infix operator -: AdditionPrecedence
 
 public func -(lhs: VisualFormat, rhs: VisualFormat) -> VisualFormat {
-    return VisualFormat(composition: lhs, .Connection, rhs)
+    return VisualFormat(composition: lhs, .connection, rhs)
 }
 
 public func -(lhs: VisualFormat, rhs: (ViewExpression)) -> VisualFormat {
-    return VisualFormat(composition: lhs, .Connection, createVisualFormatPredicate(rhs))
+    return VisualFormat(composition: lhs, .connection, createVisualFormatPredicate(view: rhs))
 }
 
 
-prefix operator == {}
+prefix operator ==
 
 public prefix func ==(n: Int) -> ViewExpression {
-    return .Predicate(LayoutPredicate(relation: .Equal, object: .Constant(n), priority: nil))
+    return .predicate(LayoutPredicate(relation: .equal, object: .constant(n), priority: nil))
 }
 
 public prefix func ==(view: ViewExpression) -> ViewExpression {
-    return createViewExpressionPredicate(view, relation: .Equal)
+    return createViewExpressionPredicate(view: view, relation: .equal)
 }
 
 
-prefix operator <= {}
+prefix operator <=
 
 public prefix func <=(n: Int) -> ViewExpression {
-    return .Predicate(LayoutPredicate(relation: .LessThanOrEqual, object: .Constant(n), priority: nil))
+    return .predicate(LayoutPredicate(relation: .lessThanOrEqual, object: .constant(n), priority: nil))
 }
 
 public prefix func <=(view: ViewExpression) -> ViewExpression {
-    return createViewExpressionPredicate(view, relation: .LessThanOrEqual)
+    return createViewExpressionPredicate(view: view, relation: .lessThanOrEqual)
 }
 
 
-prefix operator >= {}
+prefix operator >=
 
 public prefix func >=(n: Int) -> ViewExpression {
-    return .Predicate(LayoutPredicate(relation: .GreaterThanOrEqual, object: .Constant(n), priority: nil))
+    return .predicate(LayoutPredicate(relation: .greaterThanOrEqual, object: .constant(n), priority: nil))
 }
 
 public prefix func >=(view: ViewExpression) -> ViewExpression {
-    return createViewExpressionPredicate(view, relation: .GreaterThanOrEqual)
+    return createViewExpressionPredicate(view: view, relation: .greaterThanOrEqual)
 }
 
 
 //infix operator % {}
 
-public func %(lhs: VisualFormat, rhs: NSLayoutFormatOptions) -> VisualFormat {
-    return VisualFormat(composition: lhs, .Options(rhs))
+public func %(lhs: VisualFormat, rhs: LayoutFormatOptions) -> VisualFormat {
+    return VisualFormat(composition: lhs, .options(rhs))
 }
 
 
-infix operator ~ {}
+infix operator ~: AssignmentPrecedence
 
+@discardableResult
 public func ~(lhs: ViewExpression, rhs: Int) -> ViewExpression {
-    if case let .Predicate(p) = lhs {
-        return .Predicate(LayoutPredicate(relation: p.relation, object: p.object, priority: rhs))
+    if case let .predicate(p) = lhs {
+        return .predicate(LayoutPredicate(relation: p.relation, object: p.object, priority: rhs))
     }
     fatalError("Error")
 }
 
+@discardableResult
 public func ~(lhs: LayoutOrientation, rhs: VisualFormat) -> [AnyObject] {
     let exp = lhs.rawValue + ":" + rhs.description
-    let c = NSLayoutConstraint.constraintsWithVisualFormat(exp, options: rhs.options, metrics: nil, views: rhs.viewsDictionary)
-    NSLayoutConstraint.activateConstraints(c)
+    let c = NSLayoutConstraint.constraints(withVisualFormat: exp, options: rhs.options, metrics: nil, views: rhs.viewsDictionary)
+    NSLayoutConstraint.activate(c)
     return c
 }

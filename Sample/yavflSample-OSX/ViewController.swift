@@ -18,14 +18,14 @@ class ViewController: NSViewController {
         let textField2 = NSTextField()
         
         textField1.stringValue = "Label"
-        textField1.backgroundColor = NSColor.grayColor()
+        textField1.backgroundColor = NSColor.gray
         view.addSubview(textField1)
         view.addSubview(textField2)
         
         visualFormat(textField1, textField2) { l, t in
-            .V ~ |-80-[l,==32];
-            .V ~ [t,==48];
-            .H ~ |-20-[l,==t]-10-[t]-| % .AlignAllCenterY
+            .v ~ |-80-[l,==32];
+            .v ~ [t,==48];
+            .h ~ |-20-[l,==t]-10-[t]-| % .alignAllCenterY
         }
     }
 }
