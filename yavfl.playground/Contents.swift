@@ -4,34 +4,34 @@ import UIKit
 import XCPlayground
 import yavfl
 
-func Root(color: UIColor = UIColor.redColor()) -> UIView {
+func Root(color: UIColor = .red) -> UIView {
     let v = UIView(frame: CGRect(x: 0, y: 0, width: 280, height: 150))
     v.layer.borderWidth = 1
-    v.backgroundColor = UIColor.whiteColor()
+    v.backgroundColor = .white
     return v
 }
 
 let root = Root()
 
-func View(text: String, color: UIColor = UIColor.redColor()) -> UIView {
+func View(text: String, color: UIColor = .red) -> UIView {
     let v = UILabel()
     v.text = text
-    v.textAlignment = .Center
+    v.textAlignment = .center
     v.layer.borderWidth = 1
-    v.layer.borderColor = color.CGColor
+    v.layer.borderColor = color.cgColor
     root.addSubview(v)
     return v
 }
 
 
-let x = View("x")
-let y = View("y")
+let x = View(text: "x", color: .blue)
+let y = View(text: "y", color: .green)
 
 //: ### Sample 1
 visualFormat(x, y) { x, y in
-    .V ~ |-20-[x,==80];
-    .V ~ [y,==50];
-    .H ~ |-20-[x,==y]-10-[y]-20-| % .AlignAllCenterY
+    .v ~ |-20-[x,==80];
+    .v ~ [y,==50];
+    .h ~ |-20-[x,==y]-10-[y]-20-| % .alignAllCenterY
 }
 
 
