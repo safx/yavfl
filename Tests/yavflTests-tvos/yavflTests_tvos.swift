@@ -19,23 +19,23 @@ public func == (lhs: LayoutViewName, rhs: LayoutViewName) -> Bool {
 
 class yavflTests: XCTestCase {
 
-    func vf(vf: VisualFormat) -> String {
+    func vf(_ vf: VisualFormat) -> String {
         return vf.description
     }
 
-    func opt(vf: VisualFormat) -> NSLayoutFormatOptions {
+    func opt(_ vf: VisualFormat) -> NSLayoutFormatOptions {
         return vf.options
     }
 
-    func rv(vf: VisualFormat) -> [LayoutViewName] {
+    func rv(_ vf: VisualFormat) -> [LayoutViewName] {
         return vf.relatedViews
     }
 
     func testVisualFormat() {
-        let x : ViewExpression = .View(LayoutViewName(view: UIView(), index: 1))
-        let y : ViewExpression = .View(LayoutViewName(view: UIView(), index: 2))
-        let z : ViewExpression = .View(LayoutViewName(view: UIView(), index: 3))
-
+        let x : ViewExpression = .view(LayoutViewName(view: UIView(), index: 1))
+        let y : ViewExpression = .view(LayoutViewName(view: UIView(), index: 2))
+        let z : ViewExpression = .view(LayoutViewName(view: UIView(), index: 3))
+        
         XCTAssertEqual(vf(|[x]|)              , "|[v1]|")
         XCTAssertEqual(vf(|-[x]|)             , "|-[v1]|")
         XCTAssertEqual(vf(|[x]-|)             , "|[v1]-|")
@@ -45,7 +45,7 @@ class yavflTests: XCTestCase {
         XCTAssertEqual(vf(|-[x]-(>=99)-|)     , "|-[v1]-(>=99)-|")
         XCTAssertEqual(vf([x,<=y~1000])       , "[v1(<=v2@1000)]")
         XCTAssertEqual(vf(|-0-[x,==200]-[y]-|), "|-0-[v1(==200)]-[v2]-|")
-
+        
         XCTAssertEqual(vf([x]-[y])              , "[v1]-[v2]")
         XCTAssertEqual(vf([x,>=50])             , "[v1(>=50)]")
         XCTAssertEqual(vf(|-50-[x]-50-|)        , "|-50-[v1]-50-|")
@@ -64,7 +64,7 @@ class yavflTests: XCTestCase {
         let xn = LayoutViewName(view: x_, index: 1)
         let yn = LayoutViewName(view: y_, index: 2)
         let zn = LayoutViewName(view: z_, index: 3)
-
+        
         visualFormat(x_, y_, z_) { x, y, z in
             XCTAssertEqual(rv(|[x]|)              , [xn])
             XCTAssertEqual(rv(|-[x]|)             , [xn])
@@ -75,7 +75,7 @@ class yavflTests: XCTestCase {
             XCTAssertEqual(rv(|-[x]-(>=99)-|)     , [xn])
             XCTAssertEqual(rv([x,<=y~1000])       , [xn, yn])
             XCTAssertEqual(rv(|-0-[x,==200]-[y]-|), [xn, yn])
-
+            
             XCTAssertEqual(rv([x]-[y])              , [xn, yn])
             XCTAssertEqual(rv([x,>=50])             , [xn])
             XCTAssertEqual(rv(|-50-[x]-50-|)        , [xn])
@@ -87,28 +87,28 @@ class yavflTests: XCTestCase {
             XCTAssertEqual(rv(|-[x]-[y]-[z,>=20]-|) , [xn, yn, zn])
         }
     }
-
+    
     func testOptions() {
-        let x : ViewExpression = .View(LayoutViewName(view: UIView(), index: 1))
-
+        let x : ViewExpression = .view(LayoutViewName(view: UIView(), index: 1))
+        
         XCTAssertEqual(opt(|[x]|)                   , NSLayoutFormatOptions())
-        XCTAssertEqual(opt(|[x]| % .AlignAllCenterY), NSLayoutFormatOptions.AlignAllCenterY)
+        XCTAssertEqual(opt(|[x]| % .alignAllCenterY), NSLayoutFormatOptions.alignAllCenterY)
     }
-
+    
     func testCapture() {
         let par = UIView()
         let v = UIView()
         par.addSubview(v)
-
+        
         var q1: [AnyObject]?
         visualFormat(v) { v in
-            q1 = .H ~ |-[v]
+            q1 = .h ~ |-[v]
         }
         XCTAssertEqual((q1!).count, 1)
-
+        
         var q2: [AnyObject]?
         visualFormat(v) { v in
-            q2 = .H ~ |-[v]-|
+            q2 = .h ~ |-[v]-|
         }
         XCTAssertEqual((q2!).count, 2)
     }
